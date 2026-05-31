@@ -1,4 +1,4 @@
-# Maria Florentin · Weinsommelière
+# Maria Schroeder · Weinsommelière
 
 Eine moderne, elegante One-Page-Website für eine Weinsommelière. Reine
 statische Seite — **kein Build-Schritt nötig**, einfach im Browser öffnen.
