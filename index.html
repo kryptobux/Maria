@@ -82,7 +82,11 @@
     <section class="section about" id="about">
       <div class="container about__grid">
         <div class="about__media reveal">
-          <div class="about__photo" role="img" aria-label="Porträt der Sommelière"></div>
+          <div class="about__photo">
+            <img src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=900&q=80"
+                 alt="Maria Florentin bei der Weinverkostung" loading="lazy"
+                 onerror="this.remove()" />
+          </div>
           <div class="about__badge">
             <span>Ausgezeichnet</span>
             <strong>Sommelière des Jahres</strong>
@@ -179,32 +183,32 @@
         </div>
 
         <div class="cellar__grid">
-          <article class="region reveal" style="--accent:#7b2d3b">
+          <article class="region reveal" style="--accent:#7b2d3b; --img:url('https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=700&q=80')">
             <h3>Burgund</h3>
             <p>Pinot Noir & Chardonnay in ihrer reinsten Form — Eleganz, Finesse, Terroir.</p>
             <span class="region__tag">Frankreich</span>
           </article>
-          <article class="region reveal" style="--accent:#3f5a36">
+          <article class="region reveal" style="--accent:#3f5a36; --img:url('https://images.unsplash.com/photo-1559561853-08451507cbe7?auto=format&fit=crop&w=700&q=80')">
             <h3>Mosel</h3>
             <p>Riesling von Schieferböden: vibrierend, mineralisch, unsterblich.</p>
             <span class="region__tag">Deutschland</span>
           </article>
-          <article class="region reveal" style="--accent:#5a3a52">
+          <article class="region reveal" style="--accent:#5a3a52; --img:url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=700&q=80')">
             <h3>Piemont</h3>
             <p>Nebbiolo aus Barolo & Barbaresco — kraftvoll, vielschichtig, langlebig.</p>
             <span class="region__tag">Italien</span>
           </article>
-          <article class="region reveal" style="--accent:#7a5230">
+          <article class="region reveal" style="--accent:#7a5230; --img:url('https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&w=700&q=80')">
             <h3>Rioja</h3>
             <p>Tempranillo mit Reife und Wärme, zwischen Tradition und Moderne.</p>
             <span class="region__tag">Spanien</span>
           </article>
-          <article class="region reveal" style="--accent:#2f4858">
+          <article class="region reveal" style="--accent:#2f4858; --img:url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=700&q=80')">
             <h3>Champagne</h3>
             <p>Vom Winzersekt bis zum großen Jahrgang — Spannung auf der Zunge.</p>
             <span class="region__tag">Frankreich</span>
           </article>
-          <article class="region reveal" style="--accent:#5c5320">
+          <article class="region reveal" style="--accent:#5c5320; --img:url('https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?auto=format&fit=crop&w=700&q=80')">
             <h3>Naturwein</h3>
             <p>Ungeschönt, lebendig, ehrlich — die spannendste Bewegung im Glas.</p>
             <span class="region__tag">weltweit</span>
@@ -269,6 +273,33 @@
       </div>
     </section>
 
+    <!-- Gallery -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Augenblicke</p>
+          <h2 class="section__title">Momente, die im Glas beginnen.</h2>
+        </div>
+        <div class="gallery__grid">
+          <figure class="gallery__item gallery__item--tall reveal" style="--img:url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80')">
+            <figcaption>Anstoßen</figcaption>
+          </figure>
+          <figure class="gallery__item reveal" style="--img:url('https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?auto=format&fit=crop&w=800&q=80')">
+            <figcaption>Die Auswahl</figcaption>
+          </figure>
+          <figure class="gallery__item reveal" style="--img:url('https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=800&q=80')">
+            <figcaption>Im Weinberg</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--wide reveal" style="--img:url('https://images.unsplash.com/photo-1528823872057-9c018a7a7553?auto=format&fit=crop&w=1000&q=80')">
+            <figcaption>Der gedeckte Tisch</figcaption>
+          </figure>
+          <figure class="gallery__item reveal" style="--img:url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80')">
+            <figcaption>Reife & Tiefe</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section class="section contact" id="contact">
       <div class="container contact__grid">
@@ -328,6 +359,7 @@
         <a href="#about">Über mich</a>
         <a href="#services">Leistungen</a>
         <a href="#cellar">Weinwelten</a>
+        <a href="#gallery">Galerie</a>
         <a href="#contact">Kontakt</a>
       </nav>
       <p class="footer__copy">© <span id="year"></span> Maria Florentin · Weinsommelière. Mit Leidenschaft gemacht.</p>

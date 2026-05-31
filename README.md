@@ -45,8 +45,12 @@ Hero · Über mich · Leistungen · Weinwelten · Ablauf · Stimmen · Kontakt
 
 - **Farben/Typografie:** CSS-Variablen im `:root`-Block in `assets/css/style.css`
 - **Texte/Inhalte:** direkt in `index.html`
-- **Bilder:** Die Platzhalter (Verläufe/Emoji) lassen sich durch echte Fotos
-  ersetzen — z. B. `.about__photo` mit `background-image` versehen.
+- **Bilder:** Aktuell werden kuratierte Fotos von [Unsplash](https://unsplash.com)
+  per URL eingebunden (Hero, Porträt, Weinwelten, Galerie). Lädt ein Bild nicht,
+  greift automatisch ein eleganter Verlauf-/Emoji-Fallback. Zum Austausch gegen
+  **eigene Fotos**: Bilder unter `assets/img/` ablegen und die URLs in
+  `index.html` (z. B. `--img:url('assets/img/burgund.jpg')`) bzw. den
+  Hero-Hintergrund in `assets/css/style.css` ersetzen.
 - **Formular:** Aktuell wird der Versand nur simuliert. Für echten Versand den
   `fetch`-Aufruf in `assets/js/main.js` an einen Endpoint (z. B. Formspree,
   Netlify Forms oder eigenes Backend) anbinden.

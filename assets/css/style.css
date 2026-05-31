@@ -200,10 +200,14 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 500; line-height: 1.08
 .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
 .hero__bg {
   position: absolute; inset: 0;
-  background:
-    radial-gradient(1200px 700px at 75% -10%, rgba(123, 45, 59, 0.55), transparent 60%),
+  background-color: var(--wine-900);
+  background-image:
+    radial-gradient(1200px 700px at 75% -10%, rgba(123, 45, 59, 0.5), transparent 60%),
     radial-gradient(900px 600px at 10% 110%, rgba(58, 22, 34, 0.7), transparent 60%),
-    linear-gradient(160deg, var(--wine-900), var(--wine-800) 55%, #120810);
+    linear-gradient(160deg, rgba(26,13,18,0.82), rgba(37,18,26,0.88) 55%, rgba(18,8,16,0.95)),
+    url("https://images.unsplash.com/photo-1558346547-4439467bd1d5?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
 }
 .hero__glow {
   position: absolute;
@@ -258,6 +262,10 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 500; line-height: 1.08
 .about__photo::after {
   content: "🍇";
   position: absolute; inset: 0; display: grid; place-items: center; font-size: 6rem; opacity: 0.5;
+}
+.about__photo img {
+  position: absolute; inset: 0; z-index: 1;
+  width: 100%; height: 100%; object-fit: cover;
 }
 .about__badge {
   position: absolute; bottom: -22px; right: -16px;
@@ -314,17 +322,22 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 500; line-height: 1.08
   position: relative;
   border-radius: var(--radius);
   padding: 2rem 1.8rem;
-  min-height: 200px;
+  min-height: 240px;
   display: flex; flex-direction: column; justify-content: flex-end;
-  background: linear-gradient(150deg, color-mix(in srgb, var(--accent) 65%, #120810), #120810 90%);
+  background-color: #120810;
+  background-image:
+    linear-gradient(to top, color-mix(in srgb, #120810 92%, transparent), color-mix(in srgb, var(--accent) 45%, transparent) 75%, transparent),
+    var(--img, none);
+  background-size: cover;
+  background-position: center;
   border: 1px solid var(--border);
   overflow: hidden;
   transition: transform .4s var(--ease);
 }
 .region::before {
   content: ""; position: absolute; inset: 0;
-  background: radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--accent) 60%, transparent), transparent 60%);
-  opacity: 0.7; transition: opacity .4s var(--ease);
+  background: radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--accent) 55%, transparent), transparent 60%);
+  opacity: 0.5; transition: opacity .4s var(--ease); mix-blend-mode: multiply;
 }
 .region:hover { transform: translateY(-6px); }
 .region:hover::before { opacity: 1; }
@@ -367,6 +380,49 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 500; line-height: 1.08
 }
 .quote blockquote { margin: 1.5rem 0 1.2rem; font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.4; font-style: italic; }
 .quote figcaption { color: var(--gold-300); font-size: 0.9rem; letter-spacing: 0.02em; }
+
+/* =========================================================
+   Gallery
+   ========================================================= */
+.gallery { background: linear-gradient(180deg, var(--wine-900), #150a10); }
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 1rem;
+}
+.gallery__item {
+  position: relative;
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--wine-700);
+  background-image:
+    linear-gradient(to top, rgba(18,8,16,0.85), rgba(18,8,16,0.05) 60%),
+    var(--img, none);
+  background-size: cover;
+  background-position: center;
+  transition: transform .5s var(--ease);
+}
+.gallery__item::after {
+  content: "🍷";
+  position: absolute; inset: 0; z-index: 0; display: grid; place-items: center;
+  font-size: 2.4rem; opacity: 0.18;
+}
+.gallery__item:hover { transform: scale(1.02); }
+.gallery__item figcaption {
+  position: absolute; left: 1.1rem; bottom: 1rem; z-index: 1;
+  font-family: var(--font-serif); font-size: 1.25rem; letter-spacing: 0.01em;
+}
+.gallery__item--tall { grid-row: span 2; }
+.gallery__item--wide { grid-column: span 2; }
+
+@media (max-width: 760px) {
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+  .gallery__item--wide { grid-column: span 2; }
+  .gallery__item--tall { grid-row: span 1; }
+}
 
 /* =========================================================
    Contact
