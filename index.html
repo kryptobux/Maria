@@ -13,10 +13,7 @@
   <meta property="og:description" content="Weinverkostungen, Kellerkuratierung & persönliche Weinberatung." />
   <meta property="og:locale" content="de_DE" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8D%B7%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -33,12 +30,18 @@
       </a>
 
       <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
-        <a href="#about">Über mich</a>
-        <a href="#services">Leistungen</a>
-        <a href="#cellar">Weinwelten</a>
-        <a href="#process">Ablauf</a>
-        <a href="#testimonials">Stimmen</a>
-        <a href="#contact" class="nav__cta">Termin anfragen</a>
+        <a href="#about" data-i18n="nav.about">Über mich</a>
+        <a href="#services" data-i18n="nav.services">Leistungen</a>
+        <a href="#cellar" data-i18n="nav.cellar">Weinwelten</a>
+        <a href="#process" data-i18n="nav.process">Ablauf</a>
+        <a href="#testimonials" data-i18n="nav.testimonials">Stimmen</a>
+        <a href="#contact" class="nav__cta" data-i18n="nav.cta">Termin anfragen</a>
+
+        <div class="lang-switch" role="group" aria-label="Sprache / Language">
+          <button type="button" data-lang="de" class="is-active">DE</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang="en">EN</button>
+        </div>
       </nav>
 
       <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
@@ -53,24 +56,24 @@
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__inner">
-        <p class="hero__eyebrow reveal">Weinsommelière · Berlin & deutschlandweit</p>
-        <h1 class="hero__title reveal">
+        <p class="hero__eyebrow reveal" data-i18n="hero.eyebrow">Weinsommelière · Berlin & deutschlandweit</p>
+        <h1 class="hero__title reveal" data-i18n-html="hero.title">
           Wein, der <em>Geschichten</em><br />erzählt.
         </h1>
-        <p class="hero__lead reveal">
+        <p class="hero__lead reveal" data-i18n="hero.lead">
           Ich begleite Sie durch die Welt großer Weine — von der privaten
           Verkostung über die Kuratierung Ihres Kellers bis zur perfekten
           Begleitung Ihres Menüs.
         </p>
         <div class="hero__actions reveal">
-          <a href="#contact" class="btn btn--primary">Verkostung buchen</a>
-          <a href="#services" class="btn btn--ghost">Leistungen entdecken</a>
+          <a href="#contact" class="btn btn--primary" data-i18n="hero.btnBook">Verkostung buchen</a>
+          <a href="#services" class="btn btn--ghost" data-i18n="hero.btnServices">Leistungen entdecken</a>
         </div>
 
         <dl class="hero__stats reveal">
-          <div><dt>15+</dt><dd>Jahre Erfahrung</dd></div>
-          <div><dt>2.400+</dt><dd>verkostete Weine / Jahr</dd></div>
-          <div><dt>9</dt><dd>Weinregionen bereist</dd></div>
+          <div><dt>15+</dt><dd data-i18n="hero.stat1">Jahre Erfahrung</dd></div>
+          <div><dt>2.400+</dt><dd data-i18n="hero.stat2">verkostete Weine / Jahr</dd></div>
+          <div><dt>9</dt><dd data-i18n="hero.stat3">Weinregionen bereist</dd></div>
         </dl>
       </div>
       <a href="#about" class="hero__scroll" aria-label="Nach unten scrollen">
@@ -88,32 +91,32 @@
                  onerror="this.remove()" />
           </div>
           <div class="about__badge">
-            <span>Ausgezeichnet</span>
-            <strong>Sommelière des Jahres</strong>
+            <span data-i18n="about.badgeTop">Ausgezeichnet</span>
+            <strong data-i18n="about.badgeTitle">Sommelière des Jahres</strong>
             <small>Gault&amp;Millau · 2023</small>
           </div>
         </div>
         <div class="about__text reveal">
-          <p class="eyebrow">Über mich</p>
-          <h2 class="section__title">Eine Nase für das Besondere.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="about.eyebrow">Über mich</p>
+          <h2 class="section__title" data-i18n="about.title">Eine Nase für das Besondere.</h2>
+          <p data-i18n="about.p1">
             Mein Name ist Maria Schroeder. Seit über fünfzehn Jahren widme ich
             mich der Kunst, Menschen und Wein zusammenzubringen. Ausgebildet an
             der Deutschen Wein- und Sommelierschule, geprägt von Jahren in der
             Spitzengastronomie und unzähligen Reisen durch die großen
             Anbaugebiete Europas.
           </p>
-          <p>
+          <p data-i18n="about.p2">
             Für mich ist Wein kein Statussymbol, sondern Handwerk, Herkunft und
             Emotion. Ich übersetze das, was im Glas passiert — verständlich,
             unverkrampft und immer mit Leidenschaft.
           </p>
           <ul class="about__list">
-            <li>Geprüfte Sommelière (IHK) &amp; WSET Level&nbsp;3</li>
-            <li>Spezialisierung auf Burgund, Mosel &amp; Naturweine</li>
-            <li>Beraterin für Privatkeller und Restaurants</li>
+            <li data-i18n="about.li1">Geprüfte Sommelière (IHK) &amp; WSET Level&nbsp;3</li>
+            <li data-i18n="about.li2">Spezialisierung auf Burgund, Mosel &amp; Naturweine</li>
+            <li data-i18n="about.li3">Beraterin für Privatkeller und Restaurants</li>
           </ul>
-          <a href="#contact" class="link-arrow">Lernen wir uns kennen →</a>
+          <a href="#contact" class="link-arrow" data-i18n="about.link">Lernen wir uns kennen →</a>
         </div>
       </div>
     </section>
@@ -122,9 +125,9 @@
     <section class="section services" id="services">
       <div class="container">
         <div class="section__head reveal">
-          <p class="eyebrow">Leistungen</p>
-          <h2 class="section__title">Maßgeschneiderte Weinerlebnisse.</h2>
-          <p class="section__sub">
+          <p class="eyebrow" data-i18n="services.eyebrow">Leistungen</p>
+          <h2 class="section__title" data-i18n="services.title">Maßgeschneiderte Weinerlebnisse.</h2>
+          <p class="section__sub" data-i18n="services.sub">
             Ob intimer Abend zu zweit oder Firmenevent — jedes Erlebnis wird
             individuell für Sie komponiert.
           </p>
@@ -133,42 +136,42 @@
         <div class="cards">
           <article class="card reveal">
             <div class="card__icon">🍷</div>
-            <h3>Private Verkostungen</h3>
-            <p>
+            <h3 data-i18n="services.c1t">Private Verkostungen</h3>
+            <p data-i18n="services.c1p">
               Geführte Tastings bei Ihnen zu Hause. Sechs bis acht Weine,
               thematisch kuratiert, mit Geschichten zu Winzer und Terroir.
             </p>
-            <span class="card__price">ab 180&nbsp;€ p.&nbsp;P.</span>
+            <span class="card__price" data-i18n="services.c1price">ab 180&nbsp;€ p.&nbsp;P.</span>
           </article>
 
           <article class="card reveal">
             <div class="card__icon">📜</div>
-            <h3>Menübegleitung</h3>
-            <p>
+            <h3 data-i18n="services.c2t">Menübegleitung</h3>
+            <p data-i18n="services.c2p">
               Das perfekte Pairing für Ihr Dinner. Ich stimme jeden Gang auf
               den passenden Wein ab — diskret serviert oder lebhaft erzählt.
             </p>
-            <span class="card__price">auf Anfrage</span>
+            <span class="card__price" data-i18n="services.c2price">auf Anfrage</span>
           </article>
 
           <article class="card reveal">
             <div class="card__icon">🗝️</div>
-            <h3>Keller-Kuratierung</h3>
-            <p>
+            <h3 data-i18n="services.c3t">Keller-Kuratierung</h3>
+            <p data-i18n="services.c3p">
               Aufbau und Pflege Ihres persönlichen Weinkellers — von der
               Trinkreife bis zur Investitionsstrategie.
             </p>
-            <span class="card__price">ab 90&nbsp;€ / Std.</span>
+            <span class="card__price" data-i18n="services.c3price">ab 90&nbsp;€ / Std.</span>
           </article>
 
           <article class="card reveal">
             <div class="card__icon">✨</div>
-            <h3>Events &amp; Firmen</h3>
-            <p>
+            <h3 data-i18n="services.c4t">Events &amp; Firmen</h3>
+            <p data-i18n="services.c4p">
               Weinseminare, Teamevents und Blindverkostungen, die in Erinnerung
               bleiben — für Gruppen von 8 bis 80 Personen.
             </p>
-            <span class="card__price">individuelles Angebot</span>
+            <span class="card__price" data-i18n="services.c4price">individuelles Angebot</span>
           </article>
         </div>
       </div>
@@ -178,40 +181,40 @@
     <section class="section cellar" id="cellar">
       <div class="container">
         <div class="section__head reveal">
-          <p class="eyebrow">Weinwelten</p>
-          <h2 class="section__title">Regionen, die mein Herz höher schlagen lassen.</h2>
+          <p class="eyebrow" data-i18n="cellar.eyebrow">Weinwelten</p>
+          <h2 class="section__title" data-i18n="cellar.title">Regionen, die mein Herz höher schlagen lassen.</h2>
         </div>
 
         <div class="cellar__grid">
           <article class="region reveal" style="--accent:#7b2d3b; --img:url('https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=700&q=80')">
-            <h3>Burgund</h3>
-            <p>Pinot Noir & Chardonnay in ihrer reinsten Form — Eleganz, Finesse, Terroir.</p>
-            <span class="region__tag">Frankreich</span>
+            <h3 data-i18n="region.burgundyName">Burgund</h3>
+            <p data-i18n="region.burgundyText">Pinot Noir & Chardonnay in ihrer reinsten Form — Eleganz, Finesse, Terroir.</p>
+            <span class="region__tag" data-i18n="country.france">Frankreich</span>
           </article>
           <article class="region reveal" style="--accent:#3f5a36; --img:url('https://images.unsplash.com/photo-1559561853-08451507cbe7?auto=format&fit=crop&w=700&q=80')">
-            <h3>Mosel</h3>
-            <p>Riesling von Schieferböden: vibrierend, mineralisch, unsterblich.</p>
-            <span class="region__tag">Deutschland</span>
+            <h3 data-i18n="region.moselName">Mosel</h3>
+            <p data-i18n="region.moselText">Riesling von Schieferböden: vibrierend, mineralisch, unsterblich.</p>
+            <span class="region__tag" data-i18n="country.germany">Deutschland</span>
           </article>
           <article class="region reveal" style="--accent:#5a3a52; --img:url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=700&q=80')">
-            <h3>Piemont</h3>
-            <p>Nebbiolo aus Barolo & Barbaresco — kraftvoll, vielschichtig, langlebig.</p>
-            <span class="region__tag">Italien</span>
+            <h3 data-i18n="region.piedmontName">Piemont</h3>
+            <p data-i18n="region.piedmontText">Nebbiolo aus Barolo & Barbaresco — kraftvoll, vielschichtig, langlebig.</p>
+            <span class="region__tag" data-i18n="country.italy">Italien</span>
           </article>
           <article class="region reveal" style="--accent:#7a5230; --img:url('https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&w=700&q=80')">
-            <h3>Rioja</h3>
-            <p>Tempranillo mit Reife und Wärme, zwischen Tradition und Moderne.</p>
-            <span class="region__tag">Spanien</span>
+            <h3 data-i18n="region.riojaName">Rioja</h3>
+            <p data-i18n="region.riojaText">Tempranillo mit Reife und Wärme, zwischen Tradition und Moderne.</p>
+            <span class="region__tag" data-i18n="country.spain">Spanien</span>
           </article>
           <article class="region reveal" style="--accent:#2f4858; --img:url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=700&q=80')">
-            <h3>Champagne</h3>
-            <p>Vom Winzersekt bis zum großen Jahrgang — Spannung auf der Zunge.</p>
-            <span class="region__tag">Frankreich</span>
+            <h3 data-i18n="region.champagneName">Champagne</h3>
+            <p data-i18n="region.champagneText">Vom Winzersekt bis zum großen Jahrgang — Spannung auf der Zunge.</p>
+            <span class="region__tag" data-i18n="country.france">Frankreich</span>
           </article>
           <article class="region reveal" style="--accent:#5c5320; --img:url('https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?auto=format&fit=crop&w=700&q=80')">
-            <h3>Naturwein</h3>
-            <p>Ungeschönt, lebendig, ehrlich — die spannendste Bewegung im Glas.</p>
-            <span class="region__tag">weltweit</span>
+            <h3 data-i18n="region.naturalName">Naturwein</h3>
+            <p data-i18n="region.naturalText">Ungeschönt, lebendig, ehrlich — die spannendste Bewegung im Glas.</p>
+            <span class="region__tag" data-i18n="country.worldwide">weltweit</span>
           </article>
         </div>
       </div>
@@ -221,29 +224,29 @@
     <section class="section process" id="process">
       <div class="container">
         <div class="section__head reveal">
-          <p class="eyebrow">Ablauf</p>
-          <h2 class="section__title">In vier Schritten zum Erlebnis.</h2>
+          <p class="eyebrow" data-i18n="process.eyebrow">Ablauf</p>
+          <h2 class="section__title" data-i18n="process.title">In vier Schritten zum Erlebnis.</h2>
         </div>
         <ol class="steps">
           <li class="step reveal">
             <span class="step__num">01</span>
-            <h3>Kennenlernen</h3>
-            <p>Wir sprechen über Anlass, Geschmack und Budget — ganz unverbindlich.</p>
+            <h3 data-i18n="process.s1t">Kennenlernen</h3>
+            <p data-i18n="process.s1p">Wir sprechen über Anlass, Geschmack und Budget — ganz unverbindlich.</p>
           </li>
           <li class="step reveal">
             <span class="step__num">02</span>
-            <h3>Kuratierung</h3>
-            <p>Ich stelle eine Auswahl zusammen, die genau zu Ihnen passt.</p>
+            <h3 data-i18n="process.s2t">Kuratierung</h3>
+            <p data-i18n="process.s2p">Ich stelle eine Auswahl zusammen, die genau zu Ihnen passt.</p>
           </li>
           <li class="step reveal">
             <span class="step__num">03</span>
-            <h3>Das Erlebnis</h3>
-            <p>Verkostung, Dinner oder Event — geführt, persönlich, entspannt.</p>
+            <h3 data-i18n="process.s3t">Das Erlebnis</h3>
+            <p data-i18n="process.s3p">Verkostung, Dinner oder Event — geführt, persönlich, entspannt.</p>
           </li>
           <li class="step reveal">
             <span class="step__num">04</span>
-            <h3>Nachklang</h3>
-            <p>Sie erhalten Ihre persönliche Weinliste mit allen Empfehlungen.</p>
+            <h3 data-i18n="process.s4t">Nachklang</h3>
+            <p data-i18n="process.s4p">Sie erhalten Ihre persönliche Weinliste mit allen Empfehlungen.</p>
           </li>
         </ol>
       </div>
@@ -253,21 +256,21 @@
     <section class="section testimonials" id="testimonials">
       <div class="container">
         <div class="section__head reveal">
-          <p class="eyebrow">Stimmen</p>
-          <h2 class="section__title">Was Gäste erzählen.</h2>
+          <p class="eyebrow" data-i18n="testimonials.eyebrow">Stimmen</p>
+          <h2 class="section__title" data-i18n="testimonials.title">Was Gäste erzählen.</h2>
         </div>
         <div class="quotes">
           <figure class="quote reveal">
-            <blockquote>„Maria hat unseren Hochzeitstag in ein Fest der Sinne verwandelt. Jeder Wein eine kleine Reise.“</blockquote>
+            <blockquote data-i18n="testimonials.q1">„Maria hat unseren Hochzeitstag in ein Fest der Sinne verwandelt. Jeder Wein eine kleine Reise.“</blockquote>
             <figcaption>— Clara & Jonas R., Potsdam</figcaption>
           </figure>
           <figure class="quote reveal">
-            <blockquote>„Endlich jemand, der Wein erklärt, ohne zu belehren. Unser Team spricht heute noch davon.“</blockquote>
-            <figcaption>— Dr. T. Wegener, Geschäftsführer</figcaption>
+            <blockquote data-i18n="testimonials.q2">„Endlich jemand, der Wein erklärt, ohne zu belehren. Unser Team spricht heute noch davon.“</blockquote>
+            <figcaption data-i18n="testimonials.q2c">— Dr. T. Wegener, Geschäftsführer</figcaption>
           </figure>
           <figure class="quote reveal">
-            <blockquote>„Sie hat meinen Keller komplett neu gedacht — mit Gespür, Wissen und Geduld.“</blockquote>
-            <figcaption>— H. Brandt, Sammler</figcaption>
+            <blockquote data-i18n="testimonials.q3">„Sie hat meinen Keller komplett neu gedacht — mit Gespür, Wissen und Geduld.“</blockquote>
+            <figcaption data-i18n="testimonials.q3c">— H. Brandt, Sammler</figcaption>
           </figure>
         </div>
       </div>
@@ -277,24 +280,24 @@
     <section class="section gallery" id="gallery">
       <div class="container">
         <div class="section__head reveal">
-          <p class="eyebrow">Augenblicke</p>
-          <h2 class="section__title">Momente, die im Glas beginnen.</h2>
+          <p class="eyebrow" data-i18n="gallery.eyebrow">Augenblicke</p>
+          <h2 class="section__title" data-i18n="gallery.title">Momente, die im Glas beginnen.</h2>
         </div>
         <div class="gallery__grid">
           <figure class="gallery__item gallery__item--tall reveal" style="--img:url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80')">
-            <figcaption>Anstoßen</figcaption>
+            <figcaption data-i18n="gallery.cap1">Anstoßen</figcaption>
           </figure>
           <figure class="gallery__item reveal" style="--img:url('https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?auto=format&fit=crop&w=800&q=80')">
-            <figcaption>Die Auswahl</figcaption>
+            <figcaption data-i18n="gallery.cap2">Die Auswahl</figcaption>
           </figure>
           <figure class="gallery__item reveal" style="--img:url('https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=800&q=80')">
-            <figcaption>Im Weinberg</figcaption>
+            <figcaption data-i18n="gallery.cap3">Im Weinberg</figcaption>
           </figure>
           <figure class="gallery__item gallery__item--wide reveal" style="--img:url('https://images.unsplash.com/photo-1528823872057-9c018a7a7553?auto=format&fit=crop&w=1000&q=80')">
-            <figcaption>Der gedeckte Tisch</figcaption>
+            <figcaption data-i18n="gallery.cap4">Der gedeckte Tisch</figcaption>
           </figure>
           <figure class="gallery__item reveal" style="--img:url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80')">
-            <figcaption>Reife & Tiefe</figcaption>
+            <figcaption data-i18n="gallery.cap5">Reife & Tiefe</figcaption>
           </figure>
         </div>
       </div>
@@ -304,44 +307,44 @@
     <section class="section contact" id="contact">
       <div class="container contact__grid">
         <div class="contact__intro reveal">
-          <p class="eyebrow">Kontakt</p>
-          <h2 class="section__title">Lassen Sie uns das Glas erheben.</h2>
-          <p>
+          <p class="eyebrow" data-i18n="contact.eyebrow">Kontakt</p>
+          <h2 class="section__title" data-i18n="contact.title">Lassen Sie uns das Glas erheben.</h2>
+          <p data-i18n="contact.p">
             Erzählen Sie mir von Ihrem Anlass — ich melde mich innerhalb von
             24&nbsp;Stunden mit einem unverbindlichen Vorschlag.
           </p>
           <ul class="contact__details">
             <li><span>✉</span> <a href="mailto:hallo@maria-schroeder.de">hallo@maria-schroeder.de</a></li>
             <li><span>☎</span> <a href="tel:+493012345678">+49&nbsp;30&nbsp;123&nbsp;456&nbsp;78</a></li>
-            <li><span>📍</span> Berlin · deutschlandweit buchbar</li>
+            <li><span>📍</span> <span data-i18n="contact.location">Berlin · deutschlandweit buchbar</span></li>
           </ul>
         </div>
 
         <form class="contact__form reveal" id="contactForm" novalidate>
           <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required placeholder="Ihr Name" />
+            <label for="name" data-i18n="form.name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required data-i18n-ph="form.namePh" placeholder="Ihr Name" />
           </div>
           <div class="field">
-            <label for="email">E-Mail</label>
+            <label for="email" data-i18n="form.email">E-Mail</label>
             <input id="email" name="email" type="email" autocomplete="email" required placeholder="ihre@email.de" />
           </div>
           <div class="field">
-            <label for="occasion">Anlass</label>
+            <label for="occasion" data-i18n="form.occasion">Anlass</label>
             <select id="occasion" name="occasion" required>
-              <option value="" disabled selected>Bitte wählen…</option>
-              <option>Private Verkostung</option>
-              <option>Menübegleitung</option>
-              <option>Keller-Kuratierung</option>
-              <option>Event / Firma</option>
-              <option>Sonstiges</option>
+              <option value="" disabled selected data-i18n="form.choose">Bitte wählen…</option>
+              <option data-i18n="services.c1t">Private Verkostung</option>
+              <option data-i18n="services.c2t">Menübegleitung</option>
+              <option data-i18n="services.c3t">Keller-Kuratierung</option>
+              <option data-i18n="form.optEvent">Event / Firma</option>
+              <option data-i18n="form.optOther">Sonstiges</option>
             </select>
           </div>
           <div class="field">
-            <label for="message">Ihre Nachricht</label>
-            <textarea id="message" name="message" rows="4" placeholder="Worum geht es?"></textarea>
+            <label for="message" data-i18n="form.message">Ihre Nachricht</label>
+            <textarea id="message" name="message" rows="4" data-i18n-ph="form.messagePh" placeholder="Worum geht es?"></textarea>
           </div>
-          <button type="submit" class="btn btn--primary btn--block">Anfrage senden</button>
+          <button type="submit" class="btn btn--primary btn--block" data-i18n="form.submit">Anfrage senden</button>
           <p class="form__note" id="formNote" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -356,16 +359,19 @@
         <span>Maria&nbsp;Schroeder</span>
       </div>
       <nav class="footer__links" aria-label="Footernavigation">
-        <a href="#about">Über mich</a>
-        <a href="#services">Leistungen</a>
-        <a href="#cellar">Weinwelten</a>
-        <a href="#gallery">Galerie</a>
-        <a href="#contact">Kontakt</a>
+        <a href="#about" data-i18n="nav.about">Über mich</a>
+        <a href="#services" data-i18n="nav.services">Leistungen</a>
+        <a href="#cellar" data-i18n="nav.cellar">Weinwelten</a>
+        <a href="#gallery" data-i18n="footer.gallery">Galerie</a>
+        <a href="#contact" data-i18n="footer.contact">Kontakt</a>
+        <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
+        <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
       </nav>
-      <p class="footer__copy">© <span id="year"></span> Maria Schroeder · Weinsommelière. Mit Leidenschaft gemacht.</p>
+      <p class="footer__copy">© <span id="year"></span> Maria Schroeder · <span data-i18n="footer.role">Weinsommelière</span>. <span data-i18n="footer.made">Mit Leidenschaft gemacht.</span></p>
     </div>
   </footer>
 
+  <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

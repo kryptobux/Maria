@@ -91,23 +91,26 @@
         if (!ok) valid = false;
       });
 
+      const t = (window.i18n && window.i18n.t) ? window.i18n.t : function (k) { return k; };
+
       if (!valid) {
         note.classList.add("is-error");
-        note.textContent = "Bitte füllen Sie Name, eine gültige E-Mail und den Anlass aus.";
+        note.textContent = t("form.err");
         return;
       }
 
       // No backend in this static build — simulate a successful submission.
       const btn = form.querySelector("button[type=submit]");
+      const label = btn.textContent;
       btn.disabled = true;
-      btn.textContent = "Wird gesendet…";
+      btn.textContent = t("form.sending");
 
       setTimeout(function () {
         form.reset();
         btn.disabled = false;
-        btn.textContent = "Anfrage senden";
+        btn.textContent = label;
         note.classList.add("is-success");
-        note.textContent = "Vielen Dank! Ihre Anfrage ist eingegangen — ich melde mich in Kürze.";
+        note.textContent = t("form.success");
       }, 900);
     });
 

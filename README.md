@@ -18,11 +18,14 @@ python3 -m http.server 8000
 ## Features
 
 - **Luxuriöses Dark-Theme** in Weinrot mit Gold-Akzenten
+- **DE/EN-Sprachschalter** (ohne Reload, Auswahl wird gespeichert)
 - **Responsive** – Desktop, Tablet, Mobile inkl. Burger-Menü
 - **Scroll-Animationen** via `IntersectionObserver` (reveal on scroll)
 - **Sticky-Navigation** mit Scroll-Fortschrittsbalken
 - **Kontaktformular** mit clientseitiger Validierung
-- Eleganter Schriftmix: *Cormorant Garamond* + *Inter* (Google Fonts)
+- **Impressum & Datenschutz** (zweisprachig, Vorlage mit Platzhaltern)
+- Eleganter Schriftmix *Cormorant Garamond* + *Inter* — **lokal gehostet**
+  (DSGVO-konform, keine Google-Fonts-CDN, keine IP-Übertragung)
 - Zugänglichkeit: semantisches HTML, ARIA-Labels, `prefers-reduced-motion`
 - Keine Abhängigkeiten, kein Framework, kein Build
 
@@ -30,10 +33,15 @@ python3 -m http.server 8000
 
 ```
 .
-├── index.html            # Inhalt & Struktur
+├── index.html            # Startseite
+├── impressum.html        # Impressum (DE/EN, Vorlage)
+├── datenschutz.html      # Datenschutzerklärung (DE/EN, Vorlage)
 ├── assets/
 │   ├── css/style.css     # Design-System & Layout
-│   └── js/main.js        # Navigation, Animationen, Formular
+│   ├── fonts/            # lokal gehostete Schriften + fonts.css
+│   └── js/
+│       ├── i18n.js       # Übersetzungen DE/EN + Sprachumschaltung
+│       └── main.js       # Navigation, Animationen, Formular
 └── README.md
 ```
 
