@@ -159,14 +159,94 @@
       "footer.gallery": "Gallery", "footer.contact": "Contact", "footer.imprint": "Imprint",
       "footer.privacy": "Privacy", "footer.role": "Wine Sommelier", "footer.made": "Made with passion.",
       "footer.back": "← Back to home"
+    },
+
+    ru: {
+      "nav.about": "Обо мне", "nav.services": "Услуги", "nav.cellar": "Винные миры",
+      "nav.process": "Как это работает", "nav.testimonials": "Отзывы", "nav.cta": "Записаться",
+
+      "hero.eyebrow": "Винный сомелье · Берлин и по всей Германии",
+      "hero.title": "Вино, которое <em>рассказывает истории</em>.",
+      "hero.lead": "Я провожу вас по миру великих вин — от частных дегустаций и формирования вашей коллекции до идеального сопровождения вашего меню.",
+      "hero.btnBook": "Записаться на дегустацию", "hero.btnServices": "Посмотреть услуги",
+      "hero.stat1": "лет опыта", "hero.stat2": "вин дегустируется в год", "hero.stat3": "винных регионов изучено",
+
+      "about.badgeTop": "Награда", "about.badgeTitle": "Сомелье года",
+      "about.eyebrow": "Обо мне", "about.title": "Чутьё на особенное.",
+      "about.p1": "Меня зовут Мария Шрёдер. Уже более пятнадцати лет я посвящаю себя искусству соединять людей и вино. Я получила образование в Немецкой школе вина и сомелье, прошла годы работы в высокой гастрономии и совершила бесчисленные путешествия по великим винодельческим регионам Европы.",
+      "about.p2": "Для меня вино — не символ статуса, а ремесло, происхождение и эмоция. Я объясняю то, что происходит в бокале, — понятно, без снобизма и всегда со страстью.",
+      "about.li1": "Сертифицированный сомелье (IHK) и WSET Level 3",
+      "about.li2": "Специализация: Бургундия, Мозель и натуральные вина",
+      "about.li3": "Консультант частных коллекций и ресторанов",
+      "about.link": "Давайте познакомимся →",
+
+      "services.eyebrow": "Услуги", "services.title": "Винные впечатления на заказ.",
+      "services.sub": "Будь то камерный вечер на двоих или корпоративное мероприятие — каждое впечатление создаётся индивидуально для вас.",
+      "services.c1t": "Частные дегустации",
+      "services.c1p": "Дегустации с гидом у вас дома. Шесть-восемь вин, тематически подобранных, с историями о виноделах и терруаре.",
+      "services.c1price": "от 180 € с чел.",
+      "services.c2t": "Сопровождение меню",
+      "services.c2p": "Идеальная пара к вашему ужину. Я подбираю вино к каждому блюду — подаю незаметно или рассказываю увлекательно.",
+      "services.c2price": "по запросу",
+      "services.c3t": "Формирование коллекции",
+      "services.c3p": "Создание и ведение вашего личного винного погреба — от готовности к употреблению до инвестиционной стратегии.",
+      "services.c3price": "от 90 € / час",
+      "services.c4t": "Мероприятия и компании",
+      "services.c4p": "Винные семинары, командные мероприятия и слепые дегустации, которые запомнятся, — для групп от 8 до 80 человек.",
+      "services.c4price": "индивидуальное предложение",
+
+      "cellar.eyebrow": "Винные миры", "cellar.title": "Регионы, от которых сердце бьётся чаще.",
+      "region.burgundyName": "Бургундия", "region.burgundyText": "Пино Нуар и Шардоне в чистейшем виде — элегантность, утончённость, терруар.",
+      "region.moselName": "Мозель", "region.moselText": "Рислинг со сланцевых почв: живой, минеральный, бессмертный.",
+      "region.piedmontName": "Пьемонт", "region.piedmontText": "Неббиоло из Бароло и Барбареско — мощное, многослойное, долгоживущее.",
+      "region.riojaName": "Риоха", "region.riojaText": "Темпранильо со зрелостью и теплотой, между традицией и современностью.",
+      "region.champagneName": "Шампань", "region.champagneText": "От игристого винодела до великого винтажа — напряжение на языке.",
+      "region.naturalName": "Натуральное вино", "region.naturalText": "Без прикрас, живое, честное — самое интересное движение в бокале.",
+      "country.france": "Франция", "country.germany": "Германия", "country.italy": "Италия",
+      "country.spain": "Испания", "country.worldwide": "по всему миру",
+
+      "process.eyebrow": "Как это работает", "process.title": "Четыре шага к впечатлению.",
+      "process.s1t": "Знакомство", "process.s1p": "Мы обсуждаем повод, вкусы и бюджет — ни к чему не обязывает.",
+      "process.s2t": "Подбор", "process.s2p": "Я составляю подборку, которая идеально подходит именно вам.",
+      "process.s3t": "Впечатление", "process.s3p": "Дегустация, ужин или мероприятие — с сопровождением, лично, непринуждённо.",
+      "process.s4t": "Послевкусие", "process.s4p": "Вы получаете персональный список вин со всеми рекомендациями.",
+
+      "testimonials.eyebrow": "Отзывы", "testimonials.title": "Что говорят гости.",
+      "testimonials.q1": "«Мария превратила день нашей свадьбы в праздник чувств. Каждое вино — маленькое путешествие.»",
+      "testimonials.q2": "«Наконец-то человек, который объясняет вино, не поучая. Наша команда до сих пор вспоминает.»",
+      "testimonials.q2c": "— Д-р Т. Вегенер, управляющий директор",
+      "testimonials.q3": "«Она полностью переосмыслила мой погреб — с чутьём, знанием и терпением.»",
+      "testimonials.q3c": "— Х. Брандт, коллекционер",
+
+      "gallery.eyebrow": "Мгновения", "gallery.title": "Моменты, которые начинаются в бокале.",
+      "gallery.cap1": "Тост", "gallery.cap2": "Выбор", "gallery.cap3": "На винограднике",
+      "gallery.cap4": "Накрытый стол", "gallery.cap5": "Зрелость и глубина",
+
+      "contact.eyebrow": "Контакты", "contact.title": "Давайте поднимем бокал.",
+      "contact.p": "Расскажите мне о вашем поводе — я отвечу в течение 24 часов с необязательным предложением.",
+      "contact.location": "Берлин · бронирование по всей Германии",
+
+      "form.name": "Имя", "form.namePh": "Ваше имя", "form.email": "E-mail",
+      "form.occasion": "Повод", "form.choose": "Пожалуйста, выберите…",
+      "form.optEvent": "Мероприятие / компания", "form.optOther": "Другое",
+      "form.message": "Ваше сообщение", "form.messagePh": "О чём речь?", "form.submit": "Отправить запрос",
+      "form.err": "Пожалуйста, укажите имя, действующий e-mail и повод.",
+      "form.sending": "Отправка…",
+      "form.success": "Спасибо! Ваш запрос получен — я скоро свяжусь с вами.",
+
+      "footer.gallery": "Галерея", "footer.contact": "Контакты", "footer.imprint": "Выходные данные",
+      "footer.privacy": "Конфиденциальность", "footer.role": "Винный сомелье", "footer.made": "Сделано со страстью.",
+      "footer.back": "← На главную"
     }
   };
 
   /* ---- Legal pages (shared dictionary) ---- */
   I18N.de["imp.title"] = "Impressum";
   I18N.en["imp.title"] = "Imprint";
+  I18N.ru["imp.title"] = "Выходные данные (Impressum)";
   I18N.de["ds.title"] = "Datenschutzerklärung";
   I18N.en["ds.title"] = "Privacy Policy";
+  I18N.ru["ds.title"] = "Политика конфиденциальности";
 
   function apply(lang) {
     var dict = I18N[lang] || I18N.de;
@@ -216,7 +296,8 @@
   var saved;
   try { saved = localStorage.getItem("lang"); } catch (e) {}
   var browser = (navigator.language || "de").slice(0, 2).toLowerCase();
-  apply(saved || (browser === "en" ? "en" : "de"));
+  var supported = { de: 1, en: 1, ru: 1 };
+  apply(saved || (supported[browser] ? browser : "de"));
 
   document.addEventListener("click", function (e) {
     var btn = e.target.closest && e.target.closest(".lang-switch button");

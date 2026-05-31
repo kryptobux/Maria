@@ -18,7 +18,7 @@ python3 -m http.server 8000
 ## Features
 
 - **Luxuriöses Dark-Theme** in Weinrot mit Gold-Akzenten
-- **DE/EN-Sprachschalter** (ohne Reload, Auswahl wird gespeichert)
+- **DE/EN/RU-Sprachschalter** (ohne Reload, Auswahl wird gespeichert)
 - **Responsive** – Desktop, Tablet, Mobile inkl. Burger-Menü
 - **Scroll-Animationen** via `IntersectionObserver` (reveal on scroll)
 - **Sticky-Navigation** mit Scroll-Fortschrittsbalken

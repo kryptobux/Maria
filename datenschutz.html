@@ -23,10 +23,12 @@
         <a href="index.html#about" data-i18n="nav.about">Über mich</a>
         <a href="index.html#services" data-i18n="nav.services">Leistungen</a>
         <a href="index.html#contact" class="nav__cta" data-i18n="nav.cta">Termin anfragen</a>
-        <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <div class="lang-switch" role="group" aria-label="Sprache / Language / Язык">
           <button type="button" data-lang="de" class="is-active">DE</button>
           <span aria-hidden="true">/</span>
           <button type="button" data-lang="en">EN</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang="ru">RU</button>
         </div>
       </nav>
       <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
@@ -216,6 +218,92 @@
           <span class="placeholder">[placeholders]</span> and have it legally
           reviewed before publishing. Last updated:
           <span class="placeholder">[month/year]</span>. Not legal advice.
+        </div>
+      </div>
+
+      <!-- ============ РУССКИЙ ============ -->
+      <div data-lang-block="ru" hidden>
+        <p class="legal__lead">
+          Защита ваших персональных данных важна для меня. Ниже я информирую вас
+          в соответствии с GDPR об обработке ваших данных на этом сайте.
+        </p>
+
+        <h2>1. Ответственное лицо</h2>
+        <p>
+          Мария Шрёдер<br />
+          <span class="placeholder">[Улица и номер дома]</span>,
+          <span class="placeholder">[Индекс и город]</span><br />
+          E-mail: <a href="mailto:hallo@maria-schroeder.de">hallo@maria-schroeder.de</a>
+        </p>
+
+        <h2>2. Хостинг (GitHub Pages)</h2>
+        <p>
+          Этот сайт размещён на GitHub Pages — сервисе GitHub Inc.,
+          Сан-Франциско, США. При обращении к сайту в файлах журналов сервера
+          обрабатываются технически необходимые данные (в т. ч. IP-адрес,
+          дата/время, запрошенный файл, тип браузера). Правовое основание —
+          законный интерес в безопасном и стабильном предоставлении сайта
+          (ст. 6 абз. 1 п. f GDPR). Для передачи в США GitHub опирается, в том
+          числе, на стандартные договорные положения.
+        </p>
+
+        <h2>3. Шрифты</h2>
+        <p>
+          Используемые шрифты <strong>раздаются локально с этого сервера</strong>.
+          Подключение к серверам Google <strong>не</strong> производится, и
+          данные третьим лицам для этого не передаются.
+        </p>
+
+        <h2>4. Встроенные изображения (Unsplash)</h2>
+        <p>
+          Отдельные изображения загружаются с сервиса Unsplash (Unsplash Inc.).
+          При этом ваш IP-адрес передаётся в Unsplash. Правовое основание —
+          законный интерес в привлекательном оформлении (ст. 6 абз. 1 п. f GDPR).
+          <span class="placeholder">[Примечание: рекомендуется разместить
+          изображения локально — тогда этот раздел не нужен.]</span>
+        </p>
+
+        <h2>5. Контактная форма и e-mail</h2>
+        <p>
+          Если вы отправляете мне запрос через форму или по e-mail, я обрабатываю
+          указанные вами данные (имя, адрес e-mail, повод, сообщение) для
+          обработки вашего запроса. Правовое основание — ст. 6 абз. 1 п. b GDPR
+          (преддоговорные меры) либо п. f (законный интерес в ответе). Данные
+          удаляются, как только они больше не требуются и отсутствуют законные
+          обязанности по хранению.
+        </p>
+
+        <h2>6. Файлы cookie и отслеживание</h2>
+        <p>
+          Этот сайт <strong>не использует файлы cookie</strong>, отслеживание
+          или сервисы аналитики. Ваш выбор языка сохраняется исключительно
+          локально в вашем браузере (localStorage) и не передаётся.
+        </p>
+
+        <h2>7. Ваши права</h2>
+        <p>Вы в любое время имеете право на:</p>
+        <ul>
+          <li>доступ (ст. 15 GDPR)</li>
+          <li>исправление (ст. 16 GDPR)</li>
+          <li>удаление (ст. 17 GDPR)</li>
+          <li>ограничение обработки (ст. 18 GDPR)</li>
+          <li>переносимость данных (ст. 20 GDPR)</li>
+          <li>возражение против обработки (ст. 21 GDPR)</li>
+        </ul>
+        <p>Вы также имеете право подать жалобу в надзорный орган (ст. 77 GDPR).</p>
+
+        <h2>8. Шифрование SSL/TLS</h2>
+        <p>
+          В целях безопасности этот сайт использует шифрование TLS (узнаётся по
+          «https://» в адресной строке).
+        </p>
+
+        <div class="legal__note">
+          <strong>Примечание:</strong> шаблон — пожалуйста, заполните
+          <span class="placeholder">[placeholders]</span> и проведите
+          юридическую проверку перед публикацией. Дата:
+          <span class="placeholder">[месяц/год]</span>. Не является юридической
+          консультацией.
         </div>
       </div>
 
