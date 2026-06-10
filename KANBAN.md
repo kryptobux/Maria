@@ -5,20 +5,14 @@
 
 ---
 
-## 📥 Backlog — Phase 2 (Research & Outreach, HANDOVER §9)
+## 📥 Backlog — Follow-ups aus Phase 2
 
-| # | Task | Output |
-|---|---|---|
-| R1 | Hotel-Blockanfragen Monaci (6–7 Zi., 13.–17.09) & Maniace (17.–19.09) + je 1 Alternative (Villa Neri / Caportigia) | `outreach/hotels-*.md` |
-| R2 | NCC-RFQs: Jonicatour, Transfer Service Catania, NormanLine (Sprinter VIP 16 Pl., 7 Tage, Fahrer-Übernachtung Siracusa) | `outreach/ncc-rfq.md` + Vergleichstabelle |
-| R3 | Weingut-Slots: Passopisciaro (Mo 14.09), Benanti (Mi 16.09, priv. Vertikale), Tenuta San Michele/Murgo (Di 15.09), COS (Do 17.09) + Dublöre | `outreach/wineries-*.md`, `research/winery-grid.md` |
-| R4 | Don Camillo Fr 18.09 (12 P., Set-Menü + Weinbegleitung); Alternativen Regina Lucia / Cortile Spirito Santo | `outreach/dinner-ortigia.md` |
-| R5 | Funivia dell'Etna: Listino 2026 verifizieren, Gruppenbuchung 12 P., Verleih, Schlechtwetter-Regel; Plan B Etna Nord | `research/etna-logistics.md` |
-| R6 | Pressekit-/Bildanfragen: Monaci, Maniace, Funivia, Benanti, Murgo, COS, Tornatore | `outreach/photo-presskits.md` |
-| R7 | Legal-Memo Veranstalterin (Einzelunternehmen): § 651r-Absicherung, Reise-AGB/Stornostaffel, § 25 UStG Marge + KU-Grenzen, Gewerbe/Versicherung — Fragenkatalog für Anwalt & StB | `research/legal-memo.md` |
-| R8 | Zahlungsweg: Invoice-Vorlage RU/DE, SEPA-Konto, optional Stripe-SEPA, Nicht-SEPA-Gäste | `research/payments.md` |
-| R9 | Domain-Shortlist + Verfügbarkeit; Hosting-Empfehlung Vercel vs. VPS (→ D2) | `research/domain-hosting.md` |
-| R10 | Weinversand 6er-Karton Sizilien→DE/EU (Paccofacile/MBE Catania/Direktversand); e-AD-Pflicht Schaumwein | `research/wine-shipping.md` |
+- [ ] **Outreach versenden** (R1–R4, R6): erst D1-Kontaktdaten in Signaturen + bei Murgo Anlass des Bestandskontakts eintragen, dann einzeln raus; Antworten in `research/winery-grid.md` + Vergleichstabellen pflegen
+- [ ] **Funivia-Gruppenslot** anfragen (commerciale@funiviaetna.com): 13–14 Pax „Tour 3000" 15.09. ~09:00; 52/54-€-Frage, Anzahlung, Storno, Schlechtwetter schriftlich (→ `research/etna-logistics.md`)
+- [ ] **Versicherer-Angebote Insolvenzabsicherung** einholen: tourVERS / R+V / Zurich / HanseMerkur — Kostenhebel = Sicherheitsleistung (→ `research/legal-memo.md` §1)
+- [ ] **Termin StB Vetter**: Fragenkatalog aus `research/legal-memo.md` (Kernfrage: § 19-Grenzen vs. § 25-Marge) · **Termin Anwalt**: AGB + Stornostaffel + Formblatt Anlage 11
+- [ ] **Domain-Bulk-Check** (5-Min-Anleitung in `research/domain-hosting.md`) → D1 entscheiden; Empfehlung dort: mariaschroeder.wine + .com
+- [ ] Gran-Cru-Leistung „6 Flaschen nach Hause" final entscheiden (Schaumwein-Problematik → `research/wine-shipping.md`; Empfehlung: Weingut-Direktversand, Brut nur Reisegepäck)
 
 ### Backlog — Build-Rest (nach Blocker-Auflösung)
 
@@ -61,3 +55,16 @@
 - [x] Platzhalter-Routen `/impressum` `/datenschutz` `/agb` («готовится / Inhalt folgt», noindex)
 - [x] QA-Gates: `check:brand` **0 Treffer** ✅ · `check:typography` (U+202F/U+00A0/« ») ✅ · ESLint 0 Warnungen · `next build` ✅ · `build:static` (`output:'export'`) ✅ — beide Deploy-Pfade baubar
 - [x] Doku: README, ARCHITECTURE.md, KANBAN.md, HANDOFF.md, design-reference/README.md
+
+## ✅ Fertig — Phase 2 (HANDOVER §9), 2026-06-10
+
+- [x] **R1** Blockanfragen Monaci + Maniace (IT/EN, inkl. Alternativen Villa Neri/Caportigia) → `outreach/hotels-monaci.md`, `outreach/hotels-maniace.md`
+- [x] **R2** NCC-RFQ an Jonicatour/Transfer Service Catania/NormanLine + Vergleichstabelle → `outreach/ncc-rfq.md`
+- [x] **R3** 5 Weingut-Anfragen (Passopisciaro, Tornatore, Murgo [Bestandskontakt], Benanti inkl. privater Pietra-Marina-Vertikale, COS) + Slot-Raster mit Dublören → `outreach/wineries-*.md`, `research/winery-grid.md`
+- [x] **R4** Don-Camillo-Dinner Fr 18.09 (Set-Menü + Pairing/Korkgeld-Optionen; Alternativen benannt) → `outreach/dinner-ortigia.md`
+- [x] **R5** Etna-Logistik: Listino 2026 (52/54 € offen → konservativ 85 € p. P. budgetiert), Gruppenverfahren, Verleih, Schlechtwetter, Plan B Etna Nord 69 € → `research/etna-logistics.md`
+- [x] **R6** Pressekit-Anfrage (IT/EN) + Tracking-Tabelle für 7 Empfänger → `outreach/photo-presskits.md`
+- [x] **R7** Legal-Memo: § 651r **Abs. 2** Kleinveranstalter-Lösung, Anbieter (tourVERS/R+V/Zurich/HanseMerkur), Formblatt Anlage 11, Stornostaffeln, § 25 UStG + § 19 n. F. (25 000/100 000 € seit 2025), Fragenkataloge Anwalt/StB → `research/legal-memo.md`
+- [x] **R8** Zahlungsweg: Invoice RU/DE, SEPA-Plan (Sicherungsschein VOR Zahlung, § 651t), Stripe-Option, Nicht-SEPA-Text → `research/payments.md`
+- [x] **R9** Domain-Shortlist (12 Kandidaten, ö-Transliterationsstrategie; Empfehlung mariaschroeder.wine + .com) + Hosting-Empfehlung **Static Export auf vorhandenem VPS** (Vercel Hobby = kommerziell untersagt) → `research/domain-hosting.md`
+- [x] **R10** Weinversand: Paccofacile/MBE-Catania-Wege, Schaumweinsteuer-Falle Murgo Brut (136 €/hl, EMCS/Versandhandel) → Empfehlung Weingut-Direktversand B2C → `research/wine-shipping.md`

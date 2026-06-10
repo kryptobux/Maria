@@ -30,13 +30,23 @@ Die Design-Referenz-HTML fehlte (B4) → **gesamte RU-Copy rekonstruiert**. Verb
 - D3 Porträt: Datei als `assets/photos-src/maria.jpg` (+ `maria.credit.json` „© privat") → `npm run photos:build`
 - D4 Rechtsform/Anschrift: `FOOTER.legalLine` in `copy.ru.ts` + Impressum-Seite
 
+## Phase 2 — erledigt in derselben Session (alle 10 R-Tasks)
+
+- **Outreach (R1–R4, R6):** 10 versandfertige IT/EN-Entwürfe in `outreach/` — vor Versand nur D1-Kontakte in die Signaturen + bei Murgo den Anlass des Bestandskontakts eintragen
+- **Research (R5, R7–R10):** 6 Memos in `research/` mit Quellen und ⚠️-Markierungen. Kernerkenntnisse:
+  - *Etna:* Tour-3000-Paket konservativ **85 € p. P.** budgetieren; Gruppenslot über commerciale@funiviaetna.com; Plan B Nord 69 € steht zeitlich kompatibel zum Murgo-Termin
+  - *Legal:* Kleinveranstalter-Lösung = **§ 651r Abs. 2 BGB** (Versicherung statt Fonds; Anbieter: tourVERS/R+V/Zurich/HanseMerkur); Vorkasse erst nach Sicherungsschein (§ 651t); **StB-Kernfrage:** zählt für § 19-Grenzen Gesamtpreis oder Marge (§ 25)? → Fragenkataloge fertig
+  - *Hosting (D2-Empfehlung):* **Static Export auf vorhandenem VPS** — Vercel-Hobby untersagt kommerzielle Nutzung; *Domain:* mariaschroeder.wine + .com (Bulk-Check-Anleitung im Memo)
+  - *Weinversand:* Stillwein unkritisch, **Murgo Brut = Schaumweinsteuer/EMCS-Falle** → „6 Flaschen"-Gran-Cru-Leistung als Weingut-Direktversand gestalten oder Brut ausnehmen
+- Faktenchecks der Landing-Copy: Monaci (25 ha, 19. Jh.) ✅ · Maniace Boutique Hotel (UNA Esperienze, Ex-Kloster) ✅
+
 ## Nächste Schritte (Reihenfolge empfohlen)
 
-1. **Jury, 30 min:** design-reference einchecken (B4) · D1–D6 soweit möglich entscheiden · Annahmen-Liste oben absegnen/korrigieren
+1. **Jury, 30 min:** design-reference einchecken (B4) · D1–D6 entscheiden (Hosting-Empfehlung liegt vor) · Annahmen-Liste oben absegnen — danach Outreach-Signaturen füllen und **versenden**
 2. **Maschine mit offenem Netz:** `npm run photos:source` → Kandidaten in `/tmp/photo-candidates/` **ansehen**, Picks nach `assets/photos-src/` + Credit-Sidecars, `npm run photos:build && npm run og:build` → 12/12-DoD; `research/photo-log.md` führen
 3. Maps-Queries im Browser verifizieren (B2, Kommentar-Checkliste in `routes.ts`)
 4. Lighthouse + Screenshots (B5), Abweichungen fixen
-5. Phase 2 starten (KANBAN R1–R10): Outreach-Drafts zuerst (kein Netz nötig), dann Recherche-Memos
+5. Termine: StB Vetter + Anwalt (Fragenkataloge in `research/legal-memo.md`) · Versicherer-Angebote für Sicherungsschein einholen
 
 ## Betrieb
 
