@@ -86,5 +86,5 @@ DoD nicht der Endstand (KANBAN B1).
 ## Bewusste Abweichungen vom Handover (mit Grund)
 
 1. **`<picture>` statt `next/image`** — s. o. (Static-Export-Kompatibilität); Perf-Ziele werden über die eigene srcset-Pipeline erfüllt.
-2. **Projekt liegt als Unterordner im Repo `Angebot_TS`** — die Session war auf dieses Repo + Branch festgelegt; das Projekt ist in sich geschlossen (eigene package.json) und kann 1:1 in ein eigenes Repo umziehen.
-3. **KANBAN/ARCHITECTURE/HANDOFF liegen im Projektordner**, nicht im Repo-Root — Root gehört dem (fachfremden) Bestandsprojekt; keine Vermischung der Boards.
+2. **Bootstrap im falschen Repo:** Die Build-Session war auf `Angebot_TS` festgelegt → Projekt entstand dort als Unterordner und wurde am 2026-06-10 per `git subtree split` (volle Historie) in sein eigentliches Repo **`kryptobux/Maria`** überführt.
+3. **KANBAN/ARCHITECTURE/HANDOFF liegen im Projekt** (hier im Repo-Root von kryptobux/Maria) — getrennt von den Boards des Bestandsprojekts in Angebot_TS.

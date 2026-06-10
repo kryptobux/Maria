@@ -56,4 +56,4 @@ Voll-QA vor jedem Push: `npm run qa`.
 
 ## Einordnung im Repo
 
-Projekt lebt unter `maria-schroeder-sicily/` im Repo `Angebot_TS` (Session war auf dieses Repo/diesen Branch festgelegt). Es ist vollständig self-contained → Umzug in eigenes Repo = Ordner kopieren. Das Bestandsprojekt im Root wurde **nicht angefasst**.
+**Heimat-Repo: `kryptobux/Maria`.** Das Projekt wurde am 2026-06-10 in einer auf `Angebot_TS` festgelegten Session gebootstrapped (Unterordner `maria-schroeder-sicily/`) und anschließend per `git subtree split` mit voller Historie exportiert (Branch `maria-export` in Angebot_TS → Import nach kryptobux/Maria, Anleitung im Migrations-Commit/Chat). Das Bestandsprojekt in Angebot_TS wurde nicht angefasst; der Unterordner dort wird nach bestätigtem Import entfernt.
