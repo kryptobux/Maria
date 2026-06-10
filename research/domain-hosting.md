@@ -2,6 +2,8 @@
 
 **Stand:** 2026-06-10 · **Task R9 aus HANDOVER §9**
 
+> **ENTSCHEIDUNG 2026-06-10 (Jury):** Domain = **mariaschroeder.com**, Hosting = **Strato-Webspace** (bestehender Vertrag, Domain bereits aktiviert, SSL noch einzuschalten). Damit gilt der Static-Export-Pfad; Umsetzung siehe `DEPLOY.md`. Die Analyse unten bleibt als Begründungs-/Vergleichsdokument stehen.
+
 > Kontext: Landing-Page (Next.js 15) für die Personal Brand von Sommelière Maria Schröder, primär **russischsprachige Zielgruppe** (in DE/EU lebend), Produkt: Premium-Weinreisen (Start: Sizilien 09/2026). Zwei Build-Pfade existieren im Repo: Vercel-Server-Build **und** Static Export (`out/`) für eigenen VPS hinter nginx.
 
 ---

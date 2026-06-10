@@ -8,10 +8,10 @@ export const SITE = {
   deadline: '2026-07-05T23:59:59+02:00', // Early Bird, TZ Europe/Berlin (D6)
   deadlineHuman: '5 июля 2026',
   spotsLeft: 9, // D5: confirm starting value
-  email: 'TODO@…', // D1
+  email: 'TODO@…', // D1 offen — Vorschlag: Postfach kontakt@mariaschroeder.com im Strato-Panel anlegen
   whatsapp: 'TODO', // D1: international number, digits only (e.g. 4915512345678)
   telegram: 'TODO', // D1: username without @
-  domain: 'TODO', // D1/R9 — until decided, NEXT_PUBLIC_SITE_URL wins
+  domain: 'mariaschroeder.com', // ENTSCHIEDEN 2026-06-10 (Strato; SSL im Panel aktivieren — siehe DEPLOY.md)
 } as const;
 
 export const PRICES = {

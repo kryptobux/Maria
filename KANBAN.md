@@ -7,6 +7,9 @@
 
 ## 📥 Backlog — Follow-ups aus Phase 2
 
+- [ ] **Strato-Go-Live mariaschroeder.com** (`DEPLOY.md`): Unterordner anlegen + Domain zuordnen → SSL aktivieren → Build mit Prod-ENV (`N8N_WEBHOOK_URL`, `GOOGLE_MAPS_EMBED_KEY`, `NEXT_PUBLIC_SITE_URL`) → Upload → Checkliste §3 (inkl. gzip-Test + Lighthouse-Nachmessung)
+- [ ] Postfach `kontakt@mariaschroeder.com` (o. ä.) im Strato-Panel anlegen → `SITE.email` + Outreach-Signaturen füllen (Rest von D1)
+
 - [ ] **Outreach versenden** (R1–R4, R6): erst D1-Kontaktdaten in Signaturen + bei Murgo Anlass des Bestandskontakts eintragen, dann einzeln raus; Antworten in `research/winery-grid.md` + Vergleichstabellen pflegen
 - [ ] **Funivia-Gruppenslot** anfragen (commerciale@funiviaetna.com): 13–14 Pax „Tour 3000" 15.09. ~09:00; 52/54-€-Frage, Anzahlung, Storno, Schlechtwetter schriftlich (→ `research/etna-logistics.md`)
 - [ ] **Versicherer-Angebote Insolvenzabsicherung** einholen: tourVERS / R+V / Zurich / HanseMerkur — Kostenhebel = Sicherheitsleistung (→ `research/legal-memo.md` §1)
@@ -36,7 +39,7 @@
 |---|---|---|
 | **B1 Foto-Sourcing** | Build-Container: Netzwerk-Allowlist blockt `commons.wikimedia.org`, `api.unsplash.com`, `images.unsplash.com` (HTTP 403 `host_not_allowed`; nachgewiesen 2026-06-10). 0/12 Slots mit echten Fotos — Platzhalter-System aktiv | `npm run photos:source` lokal/mit offenem Egress ausführen, dann Backlog-Task „Foto-Slots final belegen" |
 | **B2 Maps-Verifikation** | `google.com` ebenfalls geblockt → Pflicht-Verifikation der Routen-Queries (§5.2) nicht möglich | manuell im Browser prüfen (Checkliste in `content/routes.ts`-Kommentar) |
-| **B3 Entscheidungen D1–D6** | Domain/Kontakte (D1), Deployment (D2), Maria-Porträt + Bio (D3), Rechtsform/Anschrift (D4), Preise final + spotsLeft (D5), EB-Deadline final (D6) | Werte in `content/site.config.ts` + `content/copy.ru.ts` (markierte TODOs) eintragen |
+| **B3 Entscheidungen D1–D6** | **D1 Domain: ✅ mariaschroeder.com** (Strato, 2026-06-10) — Kontakte (E-Mail/WhatsApp/Telegram) weiterhin offen · **D2: ✅ Strato-Webspace → Static Export** (Anleitung `DEPLOY.md`) · offen: D3 Porträt+Bio, D4 Rechtsform/Anschrift, D5 Preise final + spotsLeft, D6 EB-Deadline | Restwerte in `content/site.config.ts` + `content/copy.ru.ts` (markierte TODOs) eintragen |
 | **B4 design-reference fehlt** | Prototyp-HTML war nicht im Repo/Upload → Copy rekonstruiert | Datei einchecken, Copy-Review (siehe `design-reference/README.md`) |
 | **B5 Screenshots/Lighthouse** | ~~Kein Browser~~ → **teilgelöst 2026-06-10**: Chrome-headless-shell via Puppeteer-CDN installierbar; Screenshots Desktop/Mobile in `docs/screenshots/` ✓; Lighthouse (mobil, Static Export): **A11y 97 · Best Practices 100 · SEO 100 · Perf 74** | Perf 74 = Artefakt des unkomprimierten Testservers (python http.server, −432 KiB gzip-Potenzial laut LH) → **auf echtem Hosting nachmessen** (Erwartung ≥ 90). Bekannter Kontrast-Trade-off: Cream-auf-Ember-CTAs ≈ 3,4:1 (verbatim §3-Palette) — falls AA-Pflicht gewünscht: Button-Töne mit Jury anpassen |
 

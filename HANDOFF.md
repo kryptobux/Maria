@@ -23,12 +23,13 @@ Die Design-Referenz-HTML fehlte (B4) → **gesamte RU-Copy rekonstruiert**. Verb
 5. **Maria-Bio**: Platzhalter `[ОБРАЗОВАНИЕ/СЕРТИФИКАЦИЯ]` steht sichtbar im Text bis D3 geliefert; Zitat frei verfasst
 6. **Footer** trägt sichtbaren Platzhalter „[юридическая форма и адрес уточняются]" bis D4
 
-## Offene Entscheidungen (D1–D6, §10) — Eintragsorte
+## Offene Entscheidungen (D1–D6, §10) — Stand nach 2026-06-10
 
-- `content/site.config.ts`: email/whatsapp/telegram/domain (D1), spotsLeft + Preise final (D5), deadline (D6)
-- D2 Deployment: beide Pfade fertig; Vercel = `npm run build`, VPS = `npm run build:static` → `out/`
+- **D1 Domain: ✅ entschieden — mariaschroeder.com** (liegt im Strato-Panel; SSL noch aktivieren). Offen aus D1: E-Mail (Vorschlag `kontakt@mariaschroeder.com`, Postfach in Strato anlegen), WhatsApp-Nr., Telegram → `content/site.config.ts`
+- **D2 Hosting: ✅ entschieden — Strato-Webspace** → Deploy = Static Export, komplette Anleitung in **`DEPLOY.md`** (Unterordner + Domain-Zuordnung, SSL, ENV beim Build, rsync/SFTP, Checkliste). `trailingSlash` + `.htaccess` (gzip, Caching, 404) sind dafür bereits eingebaut
 - D3 Porträt: Datei als `assets/photos-src/maria.jpg` (+ `maria.credit.json` „© privat") → `npm run photos:build`
 - D4 Rechtsform/Anschrift: `FOOTER.legalLine` in `copy.ru.ts` + Impressum-Seite
+- D5 Preise final + spotsLeft, D6 EB-Deadline: `content/site.config.ts`
 
 ## Phase 2 — erledigt in derselben Session (alle 10 R-Tasks)
 

@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
   // <picture> (AVIF/WebP/JPEG srcsets) — no runtime optimizer needed,
   // which keeps the static export path fully functional.
   images: { unoptimized: true },
+  // Strato/Apache serves directories, not extensionless files: /impressum/
+  // → impressum/index.html. Kept identical in both build modes so URLs
+  // never diverge between server and static deploys.
+  trailingSlash: true,
   poweredByHeader: false,
 };
 
