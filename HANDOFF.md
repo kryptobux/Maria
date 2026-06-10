@@ -10,7 +10,7 @@
 - `npm run check:typography` → RU-Typografie maschinell erzwungen (U+202F in Zahlen, U+00A0 vor «—», « »)
 - ESLint 0 Warnungen · Landing 112 kB First-Load-JS · alle Seiten statisch prerendert
 
-**Nicht erfüllbar in dieser Umgebung** (Container-Allowlist ohne Bildquellen/Google, kein Browser): echte Fotos (DoD 12/12), Maps-Query-Verifikation, Screenshots/Lighthouse. Alles als Blocker B1/B2/B5 in KANBAN.md mit Auflösungsweg.
+**Nicht erfüllbar in dieser Umgebung** (Container-Allowlist ohne Bildquellen/Google): echte Fotos (DoD 12/12) und Maps-Query-Verifikation — Blocker B1/B2 in KANBAN.md mit Auflösungsweg. **Screenshots + Lighthouse gelangen doch** (Chrome-headless via Puppeteer): Bilder in `docs/screenshots/`, Scores A11y 97 / BP 100 / SEO 100 / Perf 74 — Perf-Wert ist Artefakt des unkomprimierten Testservers, auf echtem Hosting nachmessen (B5-Notiz in KANBAN).
 
 ## Wichtigste Annahmen (brauchen Jurys Review)
 

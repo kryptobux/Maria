@@ -38,7 +38,7 @@
 | **B2 Maps-Verifikation** | `google.com` ebenfalls geblockt → Pflicht-Verifikation der Routen-Queries (§5.2) nicht möglich | manuell im Browser prüfen (Checkliste in `content/routes.ts`-Kommentar) |
 | **B3 Entscheidungen D1–D6** | Domain/Kontakte (D1), Deployment (D2), Maria-Porträt + Bio (D3), Rechtsform/Anschrift (D4), Preise final + spotsLeft (D5), EB-Deadline final (D6) | Werte in `content/site.config.ts` + `content/copy.ru.ts` (markierte TODOs) eintragen |
 | **B4 design-reference fehlt** | Prototyp-HTML war nicht im Repo/Upload → Copy rekonstruiert | Datei einchecken, Copy-Review (siehe `design-reference/README.md`) |
-| **B5 Screenshots/Lighthouse** | Kein Browser im Build-Container | auf lokaler Maschine (Teil der DoD §8) |
+| **B5 Screenshots/Lighthouse** | ~~Kein Browser~~ → **teilgelöst 2026-06-10**: Chrome-headless-shell via Puppeteer-CDN installierbar; Screenshots Desktop/Mobile in `docs/screenshots/` ✓; Lighthouse (mobil, Static Export): **A11y 97 · Best Practices 100 · SEO 100 · Perf 74** | Perf 74 = Artefakt des unkomprimierten Testservers (python http.server, −432 KiB gzip-Potenzial laut LH) → **auf echtem Hosting nachmessen** (Erwartung ≥ 90). Bekannter Kontrast-Trade-off: Cream-auf-Ember-CTAs ≈ 3,4:1 (verbatim §3-Palette) — falls AA-Pflicht gewünscht: Button-Töne mit Jury anpassen |
 
 ---
 

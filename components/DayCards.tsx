@@ -26,7 +26,7 @@ export default function DayCards() {
                     <span className="font-display text-[34px] leading-none text-garnet">
                       {route.tab}
                     </span>
-                    <span className="text-[12px] font-bold uppercase tracking-[0.18em] text-ink/50">
+                    <span className="text-[12px] font-bold uppercase tracking-[0.18em] text-ink/70">
                       {day.dow} · {day.date}
                     </span>
                   </div>
