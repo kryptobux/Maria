@@ -6,6 +6,21 @@
 > ⚠️ Auf demselben Webspace liegen weitere Domains (u. a. putzcompany.de, die stayquotes-Landings).
 > **Niemals in die `htdocs`-Wurzel synchronisieren — immer in den eigenen Unterordner!**
 
+## Automatisch: GitHub Actions (Standardweg seit 2026-06-10)
+
+Jeder Push auf `main` baut den Static Export und lädt ihn nach `htdocs/mariaschroeder/`
+(`.github/workflows/deploy.yml`; manuell auslösbar über *Actions → Deploy zu Strato → Run workflow*).
+Einmalig im Repo unter *Settings → Secrets and variables → Actions* hinterlegen:
+
+| Secret | Wert |
+|--------|------|
+| `STRATO_SSH_USER` | Master-/SSH-Benutzer (Strato-Panel → „SFTP & SSH") |
+| `STRATO_SSH_PASSWORD` | zugehöriges Passwort (Strato-SSH kann nur Passwort-Auth) |
+| `STRATO_SSH_HOST` | optional, Default `511850234.swh.strato-hosting.eu` |
+| `GOOGLE_MAPS_EMBED_KEY` `N8N_WEBHOOK_URL` `N8N_TOKEN` | optional — ohne sie greifen die Fallbacks (keine Karten, Formular → mailto) |
+
+Die Schritte 0 (Panel) bleiben einmalig nötig; Schritte 1–2 unten sind der manuelle Fallback.
+
 ## 0. Einmalig: Strato-Panel vorbereiten
 
 1. **Unterordner anlegen:** per SFTP in `htdocs` den Ordner `mariaschroeder/` erstellen.

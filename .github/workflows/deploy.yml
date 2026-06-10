@@ -1,0 +1,67 @@
+name: Deploy zu Strato
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-strato
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Dependencies
+        run: npm ci
+
+      - name: QA-Gates
+        run: |
+          npm run check:brand
+          npm run check:typography
+
+      - name: Static Export bauen
+        env:
+          NEXT_PUBLIC_SITE_URL: https://mariaschroeder.com
+          GOOGLE_MAPS_EMBED_KEY: ${{ secrets.GOOGLE_MAPS_EMBED_KEY }}
+          N8N_WEBHOOK_URL: ${{ secrets.N8N_WEBHOOK_URL }}
+          N8N_TOKEN: ${{ secrets.N8N_TOKEN }}
+        run: npm run build:static
+
+      - name: Secrets prüfen
+        run: |
+          if [ -z "${{ secrets.STRATO_SSH_USER }}" ] || [ -z "${{ secrets.STRATO_SSH_PASSWORD }}" ]; then
+            echo "::error::STRATO_SSH_USER / STRATO_SSH_PASSWORD fehlen (Repo → Settings → Secrets and variables → Actions)"
+            exit 1
+          fi
+
+      # Strato-Shared-SSH kann nur Passwort-Auth → sshpass statt Deploy-Key.
+      # Ziel ist bewusst der Unterordner /htdocs/mariaschroeder/ — auf demselben
+      # Webspace liegen weitere Domains, --delete darf NUR dort wirken (s. DEPLOY.md).
+      - name: Upload zu Strato (rsync über SSH)
+        env:
+          SSHPASS: ${{ secrets.STRATO_SSH_PASSWORD }}
+          STRATO_HOST: ${{ secrets.STRATO_SSH_HOST || '511850234.swh.strato-hosting.eu' }}
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq sshpass
+          sshpass -e rsync -az --delete \
+            -e "ssh -o StrictHostKeyChecking=accept-new" \
+            out/ "${{ secrets.STRATO_SSH_USER }}@${STRATO_HOST}:/htdocs/mariaschroeder/"
+
+      - name: Live-Check
+        run: |
+          sleep 5
+          code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 https://mariaschroeder.com/ || true)
+          echo "https://mariaschroeder.com/ → HTTP $code"
+          if [ "$code" != "200" ]; then
+            echo "::warning::Seite antwortet nicht mit 200 — Domain-Zuordnung/SSL im Strato-Panel prüfen (DEPLOY.md Schritt 0)."
+          fi
