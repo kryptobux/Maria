@@ -10,12 +10,14 @@ import path from 'node:path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 
-// assembled at runtime on purpose — do not inline the literals
+// assembled at runtime on purpose — do not inline the literals.
+// The registry abbreviation matches only as a standalone uppercase word
+// (German words like "befahrbar" contain it as a lowercase substring).
 const TERMS = [
-  ['Travel', 'Suites'].join(''),
-  ['D', 'RS', 'F'].join(''),
-  ['HR', 'B'].join(''),
-  ['Im ', 'Degen'].join(''),
+  { label: ['Travel', 'Suites'].join(''), re: new RegExp(['travel', 'suites'].join(''), 'i') },
+  { label: ['D', 'RS', 'F'].join(''), re: new RegExp(`\\b${['D', 'RS', 'F'].join('')}\\b`, 'i') },
+  { label: ['HR', 'B'].join(''), re: new RegExp(`\\b${['HR', 'B'].join('')}\\b`) },
+  { label: ['Im ', 'Degen'].join(''), re: new RegExp(['im ', 'degen'].join(''), 'i') },
 ];
 
 const SKIP_DIRS = new Set(['node_modules', '.next', 'out', 'design-reference', '.git']);
@@ -36,8 +38,8 @@ async function walk(dir) {
     const lines = text.split('\n');
     lines.forEach((line, i) => {
       for (const term of TERMS) {
-        if (line.toLowerCase().includes(term.toLowerCase())) {
-          console.log(`${path.relative(ROOT, full)}:${i + 1}  contains "${term}"`);
+        if (term.re.test(line)) {
+          console.log(`${path.relative(ROOT, full)}:${i + 1}  contains "${term.label}"`);
           hits++;
         }
       }
