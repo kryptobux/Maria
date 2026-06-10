@@ -43,20 +43,22 @@ jobs:
             exit 1
           fi
 
-      # Strato-Shared-SSH kann nur Passwort-Auth → sshpass statt Deploy-Key.
-      # Der Deploy-Benutzer ist im Strato-Panel auf das Startverzeichnis
-      # /mariaschroeder eingesperrt (Jail) → Ziel ist "./"; --delete kann so die
-      # anderen Domains auf dem Webspace nicht erreichen (s. DEPLOY.md).
-      - name: Upload zu Strato (rsync über SSH)
+      # Strato erlaubt eigene Stammverzeichnisse nur für reine SFTP-Benutzer
+      # (SSH = immer voller Webspace). Der Deploy-Benutzer ist deshalb Typ SFTP
+      # mit Jail /mariaschroeder → Upload via lftp-mirror statt rsync; --delete
+      # kann die anderen Domains auf dem Webspace nicht erreichen (s. DEPLOY.md).
+      - name: Upload zu Strato (lftp mirror über SFTP)
         env:
-          SSHPASS: ${{ secrets.STRATO_SSH_PASSWORD }}
+          LFTP_PASSWORD: ${{ secrets.STRATO_SSH_PASSWORD }}
           STRATO_HOST: ${{ secrets.STRATO_SSH_HOST || '511850234.ssh.w1.strato.hosting' }}
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq sshpass
-          sshpass -e rsync -az --delete \
-            -e "ssh -o StrictHostKeyChecking=accept-new" \
-            out/ "${{ secrets.STRATO_SSH_USER }}@${STRATO_HOST}:./"
+          sudo apt-get install -y -qq lftp
+          lftp -u "${{ secrets.STRATO_SSH_USER }},${LFTP_PASSWORD}" "sftp://${STRATO_HOST}" -e "
+            set sftp:auto-confirm yes;
+            set net:max-retries 2;
+            mirror -R --delete --verbose out/ ./;
+            bye"
 
       - name: Live-Check
         run: |

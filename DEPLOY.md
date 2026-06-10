@@ -14,7 +14,7 @@ Einmalig im Repo unter *Settings → Secrets and variables → Actions* hinterle
 
 | Secret | Wert |
 |--------|------|
-| `STRATO_SSH_USER` | eigener Deploy-Benutzer (Strato-Panel → „SFTP & SSH" → Neu anlegen), **Startverzeichnis `/mariaschroeder`**, Protokoll SSH — das Jail ist der Schutz der übrigen Domains vor `--delete` |
+| `STRATO_SSH_USER` | eigener Deploy-Benutzer (Strato-Panel → „SFTP & SSH" → Neu anlegen), **Typ „SFTP (empfohlen)"**, **Stammverzeichnis `/mariaschroeder`** — das Jail ist der Schutz der übrigen Domains vor `--delete`. (SSH-Typ erlaubt bei Strato kein eigenes Stammverzeichnis → deshalb lftp/SFTP statt rsync.) |
 | `STRATO_SSH_PASSWORD` | zugehöriges Passwort (Strato-SSH kann nur Passwort-Auth) |
 | `STRATO_SSH_HOST` | optional, Default `511850234.ssh.w1.strato.hosting` (lt. Panel; nicht der alte swh-Hostname) |
 | `GOOGLE_MAPS_EMBED_KEY` `N8N_WEBHOOK_URL` `N8N_TOKEN` | optional — ohne sie greifen die Fallbacks (keine Karten, Formular → mailto) |
