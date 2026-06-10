@@ -24,11 +24,9 @@ AddDefaultCharset utf-8
 
 ErrorDocument 404 /404.html
 
-# HTTPS erzwingen — ERST aktivieren (auskommentieren entfernen), nachdem
-# SSL für mariaschroeder.com im Strato-Panel eingeschaltet ist (DEPLOY.md §3),
-# sonst Redirect auf eine Domain ohne gültiges Zertifikat.
-# <IfModule mod_rewrite.c>
-#   RewriteEngine On
-#   RewriteCond %{HTTPS} !=on
-#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-# </IfModule>
+# HTTPS erzwingen — aktiv seit 2026-06-10 (SSL im Strato-Panel eingeschaltet).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>

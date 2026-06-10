@@ -1,9 +1,40 @@
 # HANDOFF — maria-schroeder-sicily
 
-> Session 2026-06-10 (Bootstrap: Phase-1-Build durch Claude, remote ohne offenes Egress/Browser).
 > Lagebild zuerst lesen, dann KANBAN.md (Blocker!) und ARCHITECTURE.md.
 
-## Stand
+## Stand nach Go-Live-Session 2026-06-10 (NEUESTE — hier weiterlesen)
+
+**Die Seite ist LIVE: https://mariaschroeder.com (Strato, SSL aktiv, HTTPS-Redirect in `public/.htaccess` scharf).**
+
+Was diese Session erledigt hat:
+1. **Repo-Umzug abgeschlossen:** `maria-export` aus Angebot_TS mit voller Historie als `main` in kryptobux/Maria importiert. Alte statische Website archiviert unter Branch `archive/statische-website`. (Default-Branch-Umstellung auf `main` wurde dem Betreiber gezeigt — verifizieren; danach können die alten `claude/*`-Branches gelöscht werden.)
+2. **Auto-Deploy eingerichtet:** `.github/workflows/deploy.yml` — jeder Push auf `main` baut den Static Export (inkl. QA-Gates check:brand/check:typography) und lädt per lftp/SFTP nach Strato. **Push = live.** Details/Secrets-Tabelle in DEPLOY.md.
+   - Strato-Deploy-User: `stu152772241`, Typ SFTP, **Jail `/mariaschroeder`** (Schutz der anderen Domains auf dem Webspace vor `--delete`). Host `511850234.ssh.w1.strato.hosting:22`.
+   - GitHub-Secrets gesetzt: `STRATO_SSH_USER`, `STRATO_SSH_PASSWORD`. Lauf #5 grün, Domain-Zuordnung (`Intern` → `/mariaschroeder`) + SSL vom Betreiber im Strato-Panel erledigt.
+3. **HTTPS-Redirect aktiviert** (`public/.htaccess`, dieser Commit).
+
+## NÄCHSTER TASK: Bilder (Blocker B1 auflösen)
+
+Die Umgebung ist jetzt dafür konfiguriert (vom Betreiber bestätigt):
+- **Netzwerk-Freigabe** für api.unsplash.com / images.unsplash.com / commons.wikimedia.org / upload.wikimedia.org (bzw. Full).
+- **`UNSPLASH_ACCESS_KEY`** liegt als Umgebungsvariable an (Unsplash-App „mariaschroeder-landing", Demo-Tier 50 req/h).
+
+Ablauf (Pipeline ist fertig, nur ausführen):
+1. `npm install`, dann `npm run photos:source` — lädt 4–6 Kandidaten pro Slot nach `/tmp/photo-candidates/{slot}/` (Quellen: press-kits → Wikimedia Commons → Unsplash; Lizenzfilter eingebaut). Slots + Art-Direction: `content/photos.manifest.json` („dark, warm, calm — no tourist crowds…").
+2. Kandidaten **ansehen** (Read auf die Bilddateien), je Slot besten Treffer nach `assets/photos-src/{slot}.jpg` + `{slot}.credit.json` (Daten aus meta.json der Kandidaten) kopieren.
+3. `npm run photos:build && npm run og:build`, `npm run qa`, `research/photo-log.md` führen, committen, pushen → deployt automatisch.
+- **Slot `maria` NICHT aus Stock befüllen** (D3: nur eigenes Porträt vom Betreiber; Platzhalter bleibt bis dahin).
+
+## Offen / Backlog (nach den Bildern)
+
+- `GOOGLE_MAPS_EMBED_KEY`, `N8N_WEBHOOK_URL`, `N8N_TOKEN` fehlen als GitHub-Secrets → Karten-Tabs leer, Formular im mailto-Fallback. Werte vom Betreiber erfragen, nur als Secrets eintragen (Repo ist PUBLIC — nichts ins Repo committen; ggf. Visibility auf Private stellen, Betreiber wurde darauf hingewiesen).
+- Sichtbare Text-Platzhalter: Maria-Bio `[ОБРАЗОВАНИЕ/СЕРТИФИКАЦИЯ]` (D3) + Footer-Rechtsform (D4).
+- Default-Branch-Umstellung auf `main` verifizieren; alte `claude/*`-Branches aufräumen.
+- Lighthouse auf der Live-Domain nachmessen (B5; gzip via .htaccess sollte jetzt greifen).
+
+---
+
+## Stand nach Bootstrap-Session 2026-06-10 (Phase-1-Build, historisch)
 
 **Phase 1 (Build) ist code-komplett und doppelt grün gebaut** (`next build` + `output:'export'`); QA-Gates laufen automatisiert:
 - `npm run check:brand` → **0 Treffer** Alt-Brand/Alt-Badge/Registernummer/Alt-Adresse (§4.2-Gate)
