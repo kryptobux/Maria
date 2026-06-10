@@ -44,18 +44,19 @@ jobs:
           fi
 
       # Strato-Shared-SSH kann nur Passwort-Auth → sshpass statt Deploy-Key.
-      # Ziel ist bewusst der Unterordner /htdocs/mariaschroeder/ — auf demselben
-      # Webspace liegen weitere Domains, --delete darf NUR dort wirken (s. DEPLOY.md).
+      # Der Deploy-Benutzer ist im Strato-Panel auf das Startverzeichnis
+      # /mariaschroeder eingesperrt (Jail) → Ziel ist "./"; --delete kann so die
+      # anderen Domains auf dem Webspace nicht erreichen (s. DEPLOY.md).
       - name: Upload zu Strato (rsync über SSH)
         env:
           SSHPASS: ${{ secrets.STRATO_SSH_PASSWORD }}
-          STRATO_HOST: ${{ secrets.STRATO_SSH_HOST || '511850234.swh.strato-hosting.eu' }}
+          STRATO_HOST: ${{ secrets.STRATO_SSH_HOST || '511850234.ssh.w1.strato.hosting' }}
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq sshpass
           sshpass -e rsync -az --delete \
             -e "ssh -o StrictHostKeyChecking=accept-new" \
-            out/ "${{ secrets.STRATO_SSH_USER }}@${STRATO_HOST}:/htdocs/mariaschroeder/"
+            out/ "${{ secrets.STRATO_SSH_USER }}@${STRATO_HOST}:./"
 
       - name: Live-Check
         run: |
