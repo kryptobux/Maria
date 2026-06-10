@@ -15,20 +15,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Platzhalter-Modus: existiert placeholder/ACTIVE, wird statt der echten
+      # Seite nur placeholder/ hochgeladen (anonyme Coming-soon-Seite, noindex).
+      # Zurueckschalten = Datei loeschen + pushen.
+      - name: Modus bestimmen
+        id: mode
+        run: |
+          if [ -f placeholder/ACTIVE ]; then
+            echo "src=placeholder/" >> "$GITHUB_OUTPUT"
+            echo "::notice::Platzhalter-Modus AKTIV — echte Seite wird NICHT deployt (placeholder/ACTIVE loeschen zum Zurueckschalten)"
+          else
+            echo "src=out/" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/setup-node@v4
+        if: steps.mode.outputs.src == 'out/'
         with:
           node-version: 22
           cache: npm
 
       - name: Dependencies
+        if: steps.mode.outputs.src == 'out/'
         run: npm ci
 
       - name: QA-Gates
+        if: steps.mode.outputs.src == 'out/'
         run: |
           npm run check:brand
           npm run check:typography
 
       - name: Static Export bauen
+        if: steps.mode.outputs.src == 'out/'
         env:
           NEXT_PUBLIC_SITE_URL: https://mariaschroeder.com
           GOOGLE_MAPS_EMBED_KEY: ${{ secrets.GOOGLE_MAPS_EMBED_KEY }}
@@ -51,13 +68,14 @@ jobs:
         env:
           LFTP_PASSWORD: ${{ secrets.STRATO_SSH_PASSWORD }}
           STRATO_HOST: ${{ secrets.STRATO_SSH_HOST || '511850234.ssh.w1.strato.hosting' }}
+          SRC: ${{ steps.mode.outputs.src }}
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq lftp
           lftp -u "${{ secrets.STRATO_SSH_USER }},${LFTP_PASSWORD}" "sftp://${STRATO_HOST}" -e "
             set sftp:auto-confirm yes;
             set net:max-retries 2;
-            mirror -R --delete --verbose out/ ./;
+            mirror -R --delete --exclude-glob ACTIVE --verbose ${SRC} ./;
             bye"
 
       - name: Live-Check

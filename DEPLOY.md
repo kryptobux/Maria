@@ -21,6 +21,16 @@ Einmalig im Repo unter *Settings → Secrets and variables → Actions* hinterle
 
 Die Schritte 0 (Panel) bleiben einmalig nötig; Schritte 1–2 unten sind der manuelle Fallback.
 
+### Platzhalter-Modus (Seite temporär offline)
+
+Solange die Datei **`placeholder/ACTIVE`** im Repo existiert, deployt der Workflow statt der
+echten Seite nur `placeholder/` (anonyme „Coming soon"-Seite, `noindex`). Umschalten:
+
+```bash
+# Platzhalter AN:   touch placeholder/ACTIVE  && commit + push
+# echte Seite AN:   git rm placeholder/ACTIVE && commit + push
+```
+
 ## 0. Einmalig: Strato-Panel vorbereiten
 
 1. **Unterordner anlegen:** per SFTP in `htdocs` den Ordner `mariaschroeder/` erstellen.
