@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+/* Design tokens — HANDOVER §3 (verbatim palette) */
+@theme {
+  --color-basalt: #161110;
+  --color-basalt-2: #221a16;
+  --color-ember: #d4502b;
+  --color-ember-2: #e8773f;
+  --color-garnet: #7e2d35;
+  --color-garnet-d: #43191f;
+  --color-gold: #c8a35f;
+  --color-sea: #3a6e72;
+  --color-paper: #f1e9db;
+  --color-paper-2: #e8dec9;
+  --color-ink: #1d1714;
+  --color-cream: #f0e6d6;
+  --color-muted: #a8987f;
+
+  --font-display: var(--font-prata), "Prata", serif;
+  --font-body: var(--font-manrope), "Manrope", system-ui, sans-serif;
+  --font-accent: var(--font-cormorant), "Cormorant Garamond", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-basalt);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-ember);
+  color: var(--color-cream);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Fine film grain over everything — keeps gradients and placeholders organic */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+}
+
+@layer components {
+  .container-x {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 72rem;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 40rem) {
+    .container-x {
+      padding-inline: 2rem;
+    }
+  }
+
+  .section-pad {
+    padding-block: 5rem;
+  }
+  @media (min-width: 48rem) {
+    .section-pad {
+      padding-block: 7rem;
+    }
+  }
+
+  /* Eyebrow — §3: 11px, letter-spacing .22em, uppercase, gold */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.75rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.7;
+  }
+  .eyebrow--garnet {
+    color: var(--color-garnet);
+  }
+
+  .h-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: 0.005em;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 3px;
+    padding: 0.95rem 1.75rem;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: background-color 0.25s, border-color 0.25s, color 0.25s, transform 0.25s;
+    cursor: pointer;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn-primary {
+    background: var(--color-ember);
+    color: var(--color-cream);
+  }
+  .btn-primary:hover {
+    background: var(--color-ember-2);
+  }
+  .btn-ghost {
+    border: 1px solid color-mix(in srgb, var(--color-gold) 45%, transparent);
+    color: var(--color-cream);
+    background: transparent;
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-gold);
+  }
+  .btn-light {
+    background: var(--color-cream);
+    color: var(--color-ink);
+  }
+  .btn-light:hover {
+    background: var(--color-paper);
+  }
+  .btn-dark {
+    background: var(--color-basalt);
+    color: var(--color-cream);
+    border: 1px solid color-mix(in srgb, var(--color-gold) 35%, transparent);
+  }
+  .btn-dark:hover {
+    border-color: var(--color-gold);
+  }
+
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--color-gold) 35%, transparent),
+      transparent
+    );
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid color-mix(in srgb, var(--color-gold) 30%, transparent);
+    background: color-mix(in srgb, var(--color-basalt-2) 70%, transparent);
+    backdrop-filter: blur(6px);
+    border-radius: 999px;
+    padding: 0.45rem 0.95rem;
+    font-size: 13px;
+    color: var(--color-cream);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* FAQ details */
+  .faq-item {
+    border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  }
+  .faq-item > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1.15rem;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+  .faq-item > summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item > summary::after {
+    content: "+";
+    flex: none;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--color-garnet);
+    transition: transform 0.25s;
+  }
+  .faq-item[open] > summary::after {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes drift-down {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.4;
+  }
+}
+.scroll-hint {
+  animation: drift-down 2.4s ease-in-out infinite;
+}

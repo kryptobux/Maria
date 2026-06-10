@@ -1,0 +1,35 @@
+{
+  "name": "maria-schroeder-sicily",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "build:static": "node scripts/build-static.mjs",
+    "start": "next start",
+    "lint": "eslint",
+    "photos:source": "node scripts/source-photos.mjs",
+    "photos:build": "node scripts/build-images.mjs",
+    "og:build": "node scripts/build-og.mjs",
+    "check:typography": "node scripts/check-typography.mjs",
+    "check:brand": "node scripts/check-brand.mjs",
+    "qa": "npm run check:typography && npm run check:brand && npm run lint && npm run build && npm run build:static"
+  },
+  "dependencies": {
+    "next": "15.5.19",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.19",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

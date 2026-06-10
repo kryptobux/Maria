@@ -1,0 +1,123 @@
+{
+  "artDirection": "dark, warm, calm — no tourist crowds, no recognizable faces, no logos/labels in close-up, no watermarks, no oversaturated postcard look",
+  "licenses": ["CC0", "Public domain", "CC BY", "CC BY-SA"],
+  "slots": [
+    {
+      "id": "hero",
+      "ratio": "16:9",
+      "minWidth": 2400,
+      "motif": "Etna silhouette at dusk, ember glow on the horizon (section background, optional)",
+      "queries": ["Mount Etna dusk eruption glow", "Etna silhouette sunset"],
+      "altRu": "Силуэт Этны в сумерках, тлеющее зарево над кратером",
+      "mood": "basalt"
+    },
+    {
+      "id": "maria",
+      "ratio": "3:4",
+      "minWidth": 1200,
+      "motif": "OWN PORTRAIT ONLY — supplied by Jury (D3). Elegant placeholder allowed until then (the single exception).",
+      "queries": [],
+      "altRu": "Мария Шрёдер, сомелье",
+      "mood": "garnet"
+    },
+    {
+      "id": "vineyard",
+      "ratio": "4:5",
+      "minWidth": 1600,
+      "motif": "Old bush vines (alberello) on black lava sand, terraces",
+      "queries": ["Etna vineyard black soil alberello", "Etna contrada vines"],
+      "altRu": "Старые кустовые лозы альберелло на чёрном лавовом песке Этны",
+      "mood": "ember"
+    },
+    {
+      "id": "day1",
+      "ratio": "3:2",
+      "minWidth": 1600,
+      "motif": "Country estate terrace, evening light, set table",
+      "queries": ["Sicily country estate terrace sunset"],
+      "altRu": "Терраса сицилийского поместья в вечернем свете, накрытый стол",
+      "mood": "ember"
+    },
+    {
+      "id": "day2",
+      "ratio": "3:2",
+      "minWidth": 1600,
+      "motif": "Lava stone walls + vines, northern slope",
+      "queries": ["Castiglione di Sicilia vineyard lava wall"],
+      "altRu": "Виноградники у лавовых стен на северном склоне Этны",
+      "mood": "garnet"
+    },
+    {
+      "id": "day3",
+      "ratio": "3:2",
+      "minWidth": 1600,
+      "motif": "Summit craters, fumaroles, black sand",
+      "queries": ["Etna summit craters fumaroles"],
+      "altRu": "Вершинные кратеры Этны: фумаролы и чёрный песок",
+      "mood": "basalt"
+    },
+    {
+      "id": "day4",
+      "ratio": "3:2",
+      "minWidth": 1600,
+      "motif": "Baroque Catania OR wine cellar with barrels",
+      "queries": ["Catania baroque via Etnea", "Sicilian wine cellar barrels"],
+      "altRu": "Барочная Катания: виа Этнеа из лавового камня",
+      "mood": "paper"
+    },
+    {
+      "id": "day5",
+      "ratio": "3:2",
+      "minWidth": 1600,
+      "motif": "Clay amphorae in a cellar",
+      "queries": ["wine amphora cellar clay qvevri"],
+      "altRu": "Глиняные амфоры с вином в погребе",
+      "mood": "garnet"
+    },
+    {
+      "id": "day6",
+      "ratio": "3:2",
+      "minWidth": 1600,
+      "motif": "Ortigia market: stalls, citrus, fish",
+      "queries": ["Ortigia market Syracuse stalls"],
+      "altRu": "Рынок Ортиджи: прилавки с цитрусами и зеленью",
+      "mood": "sea"
+    },
+    {
+      "id": "day7",
+      "ratio": "3:2",
+      "minWidth": 1600,
+      "motif": "Ortigia seafront, morning light, sea",
+      "queries": ["Ortigia seafront morning"],
+      "altRu": "Набережная Ортиджи в утреннем свете",
+      "mood": "sea"
+    },
+    {
+      "id": "hotel1",
+      "ratio": "16:9",
+      "minWidth": 1600,
+      "motif": "Monaci delle Terre Nere (press kit preferred)",
+      "queries": ["Monaci delle Terre Nere"],
+      "altRu": "Поместье Monaci delle Terre Nere на склоне Этны",
+      "mood": "ember"
+    },
+    {
+      "id": "hotel2",
+      "ratio": "16:9",
+      "minWidth": 1600,
+      "motif": "Ortigia palazzo by the sea / Castello Maniace surroundings",
+      "queries": ["Ortigia palazzo sea Castello Maniace"],
+      "altRu": "Палаццо Ортиджи у моря, рядом с замком Маниаче",
+      "mood": "sea"
+    },
+    {
+      "id": "film",
+      "ratio": "16:10",
+      "minWidth": 1600,
+      "motif": "Sparkling wine glass backlit / tasting detail (hands ok, no faces)",
+      "queries": ["sparkling wine glass backlight vineyard"],
+      "altRu": "Бокал игристого в контровом свете над виноградником",
+      "mood": "gold"
+    }
+  ]
+}
